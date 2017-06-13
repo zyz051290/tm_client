@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>admin</title>
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+        <h2>code 2 code</h2>
+</nav>
+
+
+<div class="container-fluid" id="app">
+
+    <!-- left -->
+    <div class="pro-left-menu">
+
+
+        <div id="left_menu_list">
+
+            <div class="panel panel-default" v-for="menu in menus">
+                <div class="panel-heading" v-on:click="clickMenu(menu)" > <i class="glyphicon" v-bind:class="[menu.icon]" ></i> {{menu.title}} </div>
+
+                <div class="panel-body" v-show="menu.show" v-if="menu.sub_button">
+                    <ul class="list-group">
+
+                        <li class="list-group-item" v-on:click="clickMenu(btn)" v-for="btn in menu.sub_button">
+
+                            <i class="glyphicon" v-bind:class="[btn.icon]" ></i>
+                            {{btn.title}}
+
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid menu-left-margin" id="admin_right_body" >
+
+    </div>
+
+</div>
+
+
+
+
+
+<script src="../js/vue.min.js" type="text/javascript" ></script>
+<script src="../js/jquery-2.1.4.min.js" type="text/javascript" ></script>
+<script src="../js/jquery.ba-hashchange.js" type="text/javascript" ></script>
+<script src="../js/bootstrap.min.js" type="text/javascript" ></script>
+<script src="../js/comm.js" type="text/javascript" ></script>
+<script type="text/javascript" >
+
+    var projectName = '/Code2code';
+    var pathSuffix = '.html';
+
+    // path: 访问的路径
+    // title: 显示标题
+    // sub_button: 子菜单类型，可操作按钮或有子按钮
+    var menus = [
+        {path: '/home', title: '首页', icon: 'glyphicon-dashboard'},
+        {path: '', title: '项目管理', icon: 'glyphicon-list-alt', show:true, sub_button: [
+            {path: '/view/project/index', title: '项目列表', icon: 'glyphicon-align-justify'},
+            {path: '/view/project/add', title: '添加项目', icon: 'glyphicon-plus'}
+        ]},
+        {path: '', title: '数据库管理', icon: 'glyphicon-hdd', sub_button: [
+            {path: '/database/index', title: '数据库列表', icon: 'glyphicon-align-justify'},
+            {path: '/database/add', title: '添加数据库', icon: 'glyphicon-plus'}
+        ]}
+    ];
+
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+            menus: menus
+        },
+        methods: {
+            clickMenu: function(item) {
+                if(item.sub_button && item.sub_button.length > 0) {
+
+                    for(var i=0; i<menus.length; i++) {
+                        if(menus[i].title == item.title) {
+                            menus[i].show = ! menus[i].show;
+                        } else {
+                            menus[i].show = false;
+                        }
+                        app.menus.splice(i, 1, menus[i]);
+                    }
+                }
+
+                if(item.path) {
+                    console.info('path' + item.path);
+                    window.location.href = '#' + item.path;
+                }
+            }
+        }
+
+    });
+
+
+    // 路由
+    $(function(){
+
+        $(window).hashchange(function(){
+            var hash = location.hash;
+
+            var path = hash.replace( /^#/, '' );
+
+            if(path) {
+                $('#admin_right_body').load(projectName + path + pathSuffix);
+            }
+        })
+        $(window).hashchange();
+    });
+
+
+</script>
+
+
+
+</body>
+</html>

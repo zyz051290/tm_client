@@ -1,0 +1,57 @@
+html, body { padding: 0; margin: 0; background: #333; max-width: 320px; height: 100%;}
+.mobile-width { width: 320px; }
+#app {
+
+    margin: 0;
+    padding: 0;
+    background: white;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+.tm-panel {
+    border-radius: 0;
+    border: 0;
+    height: 100%;
+    margin: 0;
+}
+
+.col-xs-1,  .col-xs-2,  .col-xs-3,  .col-xs-4,  .col-xs-5,  .col-xs-6,  .col-xs-7,  .col-xs-8,  .col-xs-9,  .col-xs-10,  .col-xs-11,  .col-xs-12 {
+    padding: 0 8px;
+}
+
+.tm-panel .control-label {
+    padding-top: 7px;
+    text-align: right;
+}
+.tm-panel .panel-body {
+    position: relative;
+    background: #ffffff;
+}
+
+.home-gridview {
+    position: relative;
+    top: 50%;
+}
+.home-gridview .grid-col {
+    border: 1px solid #666;
+    text-align: center;
+    border-bottom: 0;
+    height: 100px;
+}
+.home-gridview .row:last-of-type .grid-col {
+    border-bottom: 1px solid #666;
+}
+.home-gridview .grid-col:last-of-type {
+    border-left: 0;
+}
+.home-gridview .grid-col .glyphicon {
+    font-size: 32px;
+}
+.tm-badge {
+    top: 9px;
+    right: 9px;
+    background: red;
+    position: absolute;
+}

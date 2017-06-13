@@ -1,0 +1,41 @@
+<div id="projectApp">
+
+    <div class="panel panel-default">
+        <div class="panel-heading"> 项目列表 </div>
+        <div class="panel-body">
+
+            <button type="button" class="btn btn-primary"> 添加项目 </button>
+            <hr />
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th width="200">操作</th>
+                        <th>项目名称</th>
+                        <th>简介</th>
+                        <th>创建时间</th>
+                    </tr>
+
+                    <tbody>
+                        <tr v-for="project in projects">
+                            <td>1</td>
+                            <td>
+                                <button type="button" class="btn btn-success"> 管理 </button>
+                                <button type="button" class="btn btn-info"> 修改 </button>
+                                <button type="button" class="btn btn-danger"> 删除 </button>
+                            </td>
+                            <td> 项目名称 </td>
+                            <td> 是一个项目简介内容 </td>
+                            <td>2017-05-01 12:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="project/index.html.js"></script>
