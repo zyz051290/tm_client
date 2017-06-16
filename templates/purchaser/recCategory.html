@@ -1,12 +1,12 @@
 <div class="panel panel-default tm-panel">
     <div class="panel-heading" style="overflow: hidden">
-        <div class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 回收品类 </div>
+        <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 回收品类 </div>
     </div>
     <div class="panel-body">
         <label>用户信息</label>
         <div>
         <table class="table table-striped">
-            <tr style="background-color:#999;color: #fff;">
+            <tr style="background-color:#444;color: #fff;">
                 <th style="text-align: center">品类</th>
                 <th style="text-align: center">数量</th>
                 <th style="text-align: center">单价</th>
@@ -38,7 +38,7 @@
         </div>
         <div id="prev"   style="text-align: center;margin-top: 30px">
             <button type="button" onclick="location.href='#/purchaser/recycle'" style="margin-right: 40px"  class="btn btn-info">上一步</button>
-            <button type="button" onclick="location.href='#/purchaser/'"  class="btn btn-info">下一步</button>
+            <button type="button" onclick="location.href='#/purchaser/recList'"  class="btn btn-info">下一步</button>
         </div>
     </div>
 </div>

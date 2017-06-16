@@ -1,0 +1,60 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 回收品类 </div>
+    </div>
+    <div class="panel-body">
+        <label>回收品类</label>
+        <div>
+            <table class="table table-striped">
+                <tr style="background-color:#444;color: #fff;">
+                    <th style="text-align: center">品类</th>
+                    <th style="text-align: center">数量</th>
+                    <th style="text-align: center">单价</th>
+                    <th style="text-align: center">小计</th>
+                </tr>
+                <tr style="text-align: center">
+                    <td>饮料瓶</td>
+                    <td><input type="text" value="11111" size="2"/></td>
+                    <td>1111111</td>
+                    <td>1111111</td>
+                </tr>
+                <tr style="text-align: center">
+                    <td>饮料瓶</td>
+                    <td><input type="text" value="11111" size="2"/></td>
+                    <td>1111111</td>
+                    <td>1111111</td>
+                </tr>
+                <tr style="text-align: center">
+                    <td>饮料瓶</td>
+                    <td><input type="text" value="11111" size="2"/></td>
+                    <td>1111111</td>
+                    <td>1111111  </td>
+                </tr>
+            </table>
+            <label>结算方式：</label>
+            <div class="form-group" id="payMethod" style="padding: 10px 20%;text-align: center">
+                <div class="btn-group single-check" role="group">
+                    <button type="button" id="virtual"  value="virtual" class="btn btn-default">虚拟币</button>
+                    <button type="button" id="cash" value="cash" class="btn btn-default">现&nbsp;&nbsp;&nbsp;&nbsp;金</button>
+                </div>
+            </div>
+        </div>
+        <div id="prev"   style="text-align: center;margin-top: 30px">
+            <button type="button" id="finish"  class="btn btn-info">完成</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="purchaser/recycle.html.js"></script>
+<script type="text/javascript">
+    $("#finish").click(function () {
+        if($("#payMethod .btn").hasClass('active')){
+            if($(".active").val()=='cash'){
+               window.location.href = '#/purchaser/recDetail1';
+            }else if($(".active").val()=='virtual'){
+                window.location.href = '#/purchaser/recDetail';
+            }
+        }else{
+            alert("请选一种付款方式");
+        }
+    });
+</script>
