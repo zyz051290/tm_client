@@ -43,3 +43,14 @@ $('#types .btn').click(function() {
         $('#tb1').hide();
     }
 });
+function selectRadio(i){
+    if(i==1){
+        window.location.href='#/godown_keeper/unchecked';
+    }
+    if(i==2){
+        window.location.href='#/godown_keeper/checked';
+    }
+    if(i==3){
+        window.location.href='#/godown_keeper/complete';
+    }
+}

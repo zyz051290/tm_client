@@ -55,3 +55,14 @@ $("#check").click(function(){//全选 或全不选
         }
     }
 });
+function selectRadio(i){
+    if(i==1){
+        window.location.href='#/godown_keeper/uninspected';
+    }
+    if(i==2){
+        window.location.href='#/godown_keeper/inspected';
+    }
+    if(i==3){
+        window.location.href='#/godown_keeper/hanging';
+    }
+}

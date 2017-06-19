@@ -13,18 +13,18 @@
     <center>
         <table border="1" width="80%" style="text-align: center;" id="tb1">
             <tr><td style="padding: 3px;"><input type="checkbox" id="check">全选</td><td><strong>订单号</strong></td><td><strong>申请时间</strong></td></tr>
-            <tr><td style="padding: 3px;"><input type="checkbox" name="sem" value="1"></td><td>20111210</td><td>2017-02-11 09:00</td></tr>
-            <tr><td style="padding: 3px;"><input type="checkbox" name="sem" value="2"></td><td></td><td></td></tr>
+            <tr onclick="javascript:selectRadio(1)"><td style="padding: 3px;"><input type="checkbox" name="sem" value="1"></td><td>20111210</td><td>2017-02-11 09:00</td></tr>
+            <tr onclick="javascript:selectRadio(1)"><td style="padding: 3px;"><input type="checkbox" name="sem" value="2"></td><td></td><td></td></tr>
         </table>
         <table border="1" width="80%" style="text-align: center;" id="tb2" hidden="hidden">
             <tr><td><strong>订单号</strong></td><td><strong>验收时间</strong></td></tr>
-            <tr><td>20111210</td><td>2017-02-11 09:00</td></tr>
-            <tr><td>20111210</td><td></td></tr>
+            <tr onclick="javascript:selectRadio(2)"><td>20111210</td><td>2017-02-11 09:00</td></tr>
+            <tr onclick="javascript:selectRadio(2)"><td>20111210</td><td></td></tr>
         </table>
         <table border="1" width="80%" style="text-align: center;" id="tb3" hidden="hidden">
             <tr><td><strong>订单号</strong></td><td><strong>挂起时间</strong></td></tr>
-            <tr><td>20111210</td><td>2017-02-11 09:00</td></tr>
-            <tr><td>20111210</td><td>2017-02-11 09:00</td></tr>
+            <tr onclick="javascript:selectRadio(3)"><td>20111210</td><td>2017-02-11 09:00</td></tr>
+            <tr onclick="javascript:selectRadio(3)"><td>20111210</td><td>2017-02-11 09:00</td></tr>
         </table>
         <div style="position: fixed;bottom:0;left: 8%">
             <input type="button" value="验收"><input type="button" value="挂起" style="margin-left: 10px;">
