@@ -29,16 +29,19 @@ $('.btn-group>.btn').click(function() {
 $('#types .btn').click(function() {
     if($('#btn_1').hasClass('active')){
         $('#tb1').show();
+        $('#tb1_btn').show();
         $('#tb2').hide();
         $('#tb3').hide();
     }
     if($('#btn_2').hasClass('active')){
         $('#tb2').show();
+        $('#tb1_btn').hide();
         $('#tb1').hide();
         $('#tb3').hide();
     }
     if($('#btn_3').hasClass('active')){
         $('#tb3').show();
+        $('#tb1_btn').hide();
         $('#tb2').hide();
         $('#tb1').hide();
     }
