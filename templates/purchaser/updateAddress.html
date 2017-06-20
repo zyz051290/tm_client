@@ -1,6 +1,9 @@
 <div class="panel panel-default tm-panel">
-    <div class="panel-heading navbar-fixed-top mobile-width" style="overflow: hidden">
-        <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 用户地址 </div>
+    <div class="panel-heading navbar-fixed-top mobile-width"
+         style="overflow: hidden;vertical-align: middle;height:46px;line-height: 22px">
+        <div onclick="history.go(-1)" class="pull-left"><i class="glyphicon glyphicon-chevron-left"></i> 用户地址</div>
+        <span style="margin-left: 13%;"><strong>修改用户信息</strong></span>
+        <button class="btn btn-default" style="width: 60px;float:right;height:30px;">确定</button>
     </div>
 
     <div class="panel-body" style="padding-bottom: 55px; padding-top: 44px;">
@@ -53,49 +56,37 @@
             <div class="form-group">
                 <label class="col-xs-3 control-label"> 楼号 </label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-xs-3 control-label"> 单元 </label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-xs-3 control-label">层 </label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-xs-3 control-label"> 号 </label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control"/>
                 </div>
             </div>
-
+            <div class="form-group">
+                <label class="col-xs-3 control-label">其他</label>
+                <div class="col-xs-9">
+                    <textarea cols="26" style="resize: none;border-radius: 4px;text-indent: 5px" rows="5"></textarea>
+                </div>
+            </div>
         </form>
     </div>
 
-    <div class="panel-footer navbar-fixed-bottom mobile-width">
-
-        <div class="row">
-            <div class="col-xs-6">
-                <a href="#/purchaser/register" class="btn btn-block btn-default"> 上一步 </a>
-            </div>
-            <div class="col-xs-6">
-                <button type="submit" onclick="location.href='#/purchaser/bindCode'" class="btn btn-block btn-success">
-                    下一步
-                </button>
-            </div>
-        </div>
-    </div>
 </div>
-
-<script type="text/javascript">
-
-</script>

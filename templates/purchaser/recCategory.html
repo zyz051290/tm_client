@@ -3,7 +3,7 @@
         <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 回收品类 </div>
     </div>
     <div class="panel-body">
-        <label>用户信息</label>
+        <label>回收品类</label>
         <div>
         <table class="table table-striped">
             <tr style="background-color:#444;color: #fff;">
@@ -13,32 +13,70 @@
                 <th style="text-align: center">小计</th>
             </tr>
             <tr style="text-align: center">
-                <td>饮料瓶</td>
-                <td><input type="text" value="11111" size="2"/></td>
-                <td>1111111</td>
-                <td>1111111</td>
+                <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                <td><input type="text" style="text-align: right" class="form-control" value="0" size="2"/></td>
+                <td><span class="unit" style="padding: 6px 0;display: block;">12</span></td>
+                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
             </tr>
             <tr style="text-align: center">
-                <td>饮料瓶</td>
-                <td><input type="text" value="11111" size="2"/></td>
-                <td>1111111</td>
-                <td>1111111</td>
+                <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                <td><input type="text" style="text-align: right" class="form-control" value="0" size="2"/></td>
+                <td><span class="unit" style="padding: 6px 0;display: block;">13</span></td>
+                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
             </tr>
             <tr style="text-align: center">
-                <td>饮料瓶</td>
-                <td><input type="text" value="11111" size="2"/></td>
-                <td>1111111</td>
-                <td>1111111  </td>
+                <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                <td><input type="text" style="text-align: right" class="form-control" value="0" size="2"/></td>
+                <td><span class="unit" style="padding: 6px 0;display: block;">11</span></td>
+                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
             </tr>
         </table>
         </div>
-        <div style="padding: 20px 10px;background-color: #eee">
-            <label style="vertical-align: top;font-size: 22px">其他：</label>
-            <textarea rows="6" cols="25" style="resize: none"></textarea>
-        </div>
-        <div id="prev"   style="text-align: center;margin-top: 30px">
-            <button type="button" onclick="location.href='#/purchaser/recycle'" style="margin-right: 40px"  class="btn btn-info">上一步</button>
-            <button type="button" onclick="location.href='#/purchaser/recList'"  class="btn btn-info">下一步</button>
+        <!--<div class="col-xs-12">
+            <label style="vertical-align: top;font-size:16px;text-align: right;margin-top: 15px;">其他：</label>
+            <textarea cols="34" class="form-control col-sm-2 " style="resize: none" rows="5"></textarea>
+        </div>-->
+        <div id="prev" style="text-align: center;">
+            <div class="col-xs-12" style="margin-top: 30px;">
+                <button type="button" onclick="location.href='#/purchaser/recycle'" style="margin-right: 40px;"
+                        class="btn btn-info">上一步
+                </button>
+                <button type="button" onclick="location.href='#/purchaser/recList'" class="btn btn-info">下一步</button>
+            </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(".table tr").each(function () {
+        var val = $(this).find("td:eq(1)>input");
+        var total = $(this).find("td:eq(3)>span")
+        var unit = $(this).find("td:eq(2)").text();
+        $(this).find("td:eq(1)>input").focus(function () {
+            if (this.value == 0) {
+                this.value = "";
+            }
+        });
+        $(this).find("td:eq(1)>input").blur(function () {
+            if (this.value == '') {
+                this.value = 0;
+                total.text(unit * this.value);
+            }
+            if (this.value != '') {
+                total.text(unit * this.value);
+            }
+        });
+    });
+    /* $(".form-control").each(function() {
+     var val = this.value;
+     $(this).focus(function() {
+     if (this.value == val) {
+     this.value = "";
+     }
+     });
+     $(this).blur(function() {
+     if (this.value == "") {
+     this.value = val;
+     }
+     });
+     });*/
+</script>

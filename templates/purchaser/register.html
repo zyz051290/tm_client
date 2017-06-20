@@ -8,36 +8,31 @@
             <div class="form-group">
                 <label class="col-xs-3 control-label"> 手机号 </label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" placeholder="手机号">
+                    <input type="text" class="form-control" name="phonenum" placeholder="手机号">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-xs-3 control-label">验证码</label>
                 <div class="col-xs-5">
-                    <input type="text" class="form-control col-sm-2 " placeholder="验证码">
+                    <input type="text" class="form-control col-sm-2" name="verify" placeholder="验证码">
                 </div>
                 <div class="col-xs-3">
-                    <button class="btn btn-default btn-ms">重发(60s)</button>
+                    <button id="resend" class="btn btn-default btn-ms">重发(<span id="time">60</span>s)</button>
                 </div>
 
             </div>
-            <div class="form-group">
+            <div>
                 <label class="center-block"> 用户类型 </label>
-
                 <div class="btn-group" role="group">
-
                     <button type="button" class="btn btn-default">居民</button>
                     <button type="button" class="btn btn-default">商户</button>
                     <button type="button" class="btn btn-default">其他</button>
                     <button type="button" class="btn btn-default">居委会</button>
                     <button type="button" class="btn btn-default">物业</button>
                     <button type="button" class="btn btn-default">其他</button>
-
                 </div>
-
             </div>
-
             <div class="form-group">
                 <br />
                 <a href="#/purchaser/register_address" class="btn btn-block btn-success"> 下一步 </a>
@@ -45,7 +40,21 @@
         </form>
     </div>
 </div>
-
 <script type="text/javascript">
-
+    var setTime;
+    $("#resend").click(function () {
+        var time = parseInt($("#time").text());
+        setTime = setInterval(function () {
+            if (time <= 0) {
+                $("#resend").attr("disabled", false);
+                $("#time").text(60);
+                clearInterval(setTime);
+                return;
+            } else {
+                $("#resend").attr("disabled", true);
+            }
+            time--;
+            $("#time").text(time);
+        }, 1000);
+    });
 </script>
