@@ -55,12 +55,26 @@
 </div>
 <script type="text/javascript" src="purchaser/recycle.html.js"></script>
 <script type="text/javascript">
+    jQuery.validator.addMethod("isMobile", function (value, element) {
+        var length = value.length;
+        var mobile = /^(((1[3578][0-9]{1})|(15[0-9]{1}))+\d{8})$/;
+        return this.optional(element) || (length == 11 && mobile.test(value));
+    }, "<span style=\'color:red\'>请正确填写您的手机号码</span>");
+
     $(function () {
         $("#rec").validate({
             focusInvalid: true,
             onkeyup: false,
             submitHandler: function (form) {
-                window.location.href = '#/purchaser/recCategory';
+                window.location.href = '#/purchaser/recCategory'
+                /* 根据当前选择回收类型，只有匿名回收仅显示现金结算
+                 var param = $("#rec").serialize();
+                 $.ajax({
+                 url : "#/purchaser/recCategory",
+                 type : "post",
+                 dataType : "json",
+                 data: param,
+                 });*/
             },
             rules: {
                 username: {
@@ -73,7 +87,7 @@
                 },
                 phonenum: {
                     required: true,
-                    minlength: 11
+                    isMobile: true
                 },
                 barcode: {
                     required: true
@@ -81,19 +95,18 @@
             },
             messages: {
                 username: {
-                    required: "<span style=\"color:red\">客户名称不能为空</span>",
+                    required: "<span style=\"color:red;padding-top: 10px;\">客户名称不能为空</span>",
                     minlength: jQuery.validator.format("不能少于3个字节")
                 },
                 address: {
-                    required: "<span style=\"color:red\">地址不能为空</span>",
-                    minlength: jQuery.validator.format("不能少于{3}个字节")
+                    required: "<span style=\"color:red;padding-top: 10px;\">地址不能为空</span>",
+                    minlength: jQuery.validator.format("不能少于3个字节")
                 },
                 phonenum: {
-                    required: "<span style=\"color:red\">客户手机号不能为空</span>",
-                    minlength: jQuery.validator.format("不能少于{11}个字节")
+                    required: "<span style=\"color:red;padding-top: 10px;\">客户手机号不能为空</span>",
                 },
                 barcode: {
-                    required: "<span style=\"color:red\">条形码不能为空</span>"
+                    required: "<span style=\"color:red;padding-top: 10px;\">条形码不能为空</span>"
                 }
             }
         });

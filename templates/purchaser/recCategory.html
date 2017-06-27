@@ -14,19 +14,19 @@
             </tr>
             <tr style="text-align: center">
                 <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
-                <td><input type="text" style="text-align: right" class="form-control" value="0" size="2"/></td>
+                <td><input type="text" style="text-align: right" class="form-control" value="0" size="1"/></td>
                 <td><span class="unit" style="padding: 6px 0;display: block;">12</span></td>
                 <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
             </tr>
             <tr style="text-align: center">
                 <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
-                <td><input type="text" style="text-align: right" class="form-control" value="0" size="2"/></td>
+                <td><input type="text" style="text-align: right" class="form-control" value="0" size="1"/></td>
                 <td><span class="unit" style="padding: 6px 0;display: block;">13</span></td>
                 <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
             </tr>
             <tr style="text-align: center">
                 <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
-                <td><input type="text" style="text-align: right" class="form-control" value="0" size="2"/></td>
+                <td><input type="text" style="text-align: right" class="form-control" value="0" size="1"/></td>
                 <td><span class="unit" style="padding: 6px 0;display: block;">11</span></td>
                 <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
             </tr>
@@ -62,21 +62,13 @@
                 total.text(unit * this.value);
             }
             if (this.value != '') {
-                total.text(unit * this.value);
+                if (!isNaN(this.value)) {
+                    total.text(unit * this.value);
+                } else {
+                    this.value = 0;
+                    alert("请填写数字！");
+                }
             }
         });
     });
-    /* $(".form-control").each(function() {
-     var val = this.value;
-     $(this).focus(function() {
-     if (this.value == val) {
-     this.value = "";
-     }
-     });
-     $(this).blur(function() {
-     if (this.value == "") {
-     this.value = val;
-     }
-     });
-     });*/
 </script>

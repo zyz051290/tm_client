@@ -1,6 +1,7 @@
 /**
  * Created by ASia on 2017-06-15.
  */
+var userType = 0;
 $('.btn-group>.btn').click(function() {
     var parentEle = $(this).parent();
     if (parentEle.hasClass('single-check')) {
@@ -12,6 +13,7 @@ $('.btn-group>.btn').click(function() {
         $(this).addClass('active');
         $(this).removeClass('btn-default');
         $(this).addClass('btn-success');
+        userType = $(this).val();
     } else {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');

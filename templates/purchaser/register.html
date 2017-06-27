@@ -2,45 +2,80 @@
     <div class="panel-heading" style="overflow: hidden">
         <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 用户注册 </div>
     </div>
-
-    <div class="panel-body">
-        <form class="form-horizontal" style="padding: 10px;">
-            <div class="form-group">
+    <div class="panel-body" style="padding: 10px">
+        <form class="form-horizontal" id="reg">
+            <div class="form-group" style="margin-left: 0;margin-right: 0;">
                 <label class="col-xs-3 control-label"> 手机号 </label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" name="phonenum" placeholder="手机号">
+                    <input type="text" class="form-control" name="phonenum" id="phonenum" placeholder="请输入手机号">
                 </div>
             </div>
-
-            <div class="form-group">
+            <div class="form-group" style="margin-left: 0;margin-right: 0;">
                 <label class="col-xs-3 control-label">验证码</label>
                 <div class="col-xs-5">
                     <input type="text" class="form-control col-sm-2" name="verify" placeholder="验证码">
                 </div>
-                <div class="col-xs-3">
-                    <button id="resend" class="btn btn-default btn-ms">重发(<span id="time">60</span>s)</button>
+                <div class="col-xs-4" style="font-size: 12px">
+                    <a id="resend" class="btn btn-default btn-ms">验证码(<span id="time">60</span>s)</a>
                 </div>
-
             </div>
-            <div>
+            <div style="padding: 0 5px;">
                 <label class="center-block"> 用户类型 </label>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default">居民</button>
-                    <button type="button" class="btn btn-default">商户</button>
-                    <button type="button" class="btn btn-default">其他</button>
-                    <button type="button" class="btn btn-default">居委会</button>
-                    <button type="button" class="btn btn-default">物业</button>
-                    <button type="button" class="btn btn-default">其他</button>
+                <div class="btn-group single-check" role="group" id="userType">
+                    <button type="button" class="btn btn-default btn-sm">居民</button>
+                    <button type="button" class="btn btn-default btn-sm">商户</button>
+                    <button type="button" class="btn btn-default btn-sm">其他</button>
+                    <button type="button" class="btn btn-default btn-sm">居委会</button>
+                    <button type="button" class="btn btn-default btn-sm">物业</button>
+                    <button type="button" class="btn btn-default btn-sm">其他</button>
                 </div>
             </div>
-            <div class="form-group">
-                <br />
-                <a href="#/purchaser/register_address" class="btn btn-block btn-success"> 下一步 </a>
+            <div class="form-group" style="margin-left: 0;margin-right: 0;">
+                <br> <br> <br> <br>
+                <button type="submit" class="btn btn-block btn-success"> 下一步</button>
             </div>
         </form>
     </div>
 </div>
 <script type="text/javascript">
+    jQuery.validator.addMethod("isMobile", function (value, element) {
+        var length = value.length;
+        var mobile = /^(((1[3578][0-9]{1})|(15[0-9]{1}))+\d{8})$/;
+        return this.optional(element) || (length == 11 && mobile.test(value));
+    }, "<span style=\'color:red\'>请正确填写您的手机号码</span>");
+
+    $(function () {
+        $("#reg").validate({
+            focusInvalid: true,
+            onkeyup: false,
+            submitHandler: function (form) {
+                if ($("#userType .btn").hasClass('active')) {
+                    window.location.href = '#/purchaser/register_address'
+                } else {
+                    alert("请选一种用户类型");
+                }
+
+            },
+            rules: {
+                phonenum: {
+                    required: true,
+                    isMobile: true
+                },
+                verify: {
+                    required: true
+                }
+            },
+            messages: {
+                phonenum: {
+                    required: "<span style=\"color:red\">手机号不能为空</span>"
+                },
+                verify: {
+                    required: "<span style=\"color:red\">请填写验证码</span>"
+                }
+            }
+        });
+    });
+
     var setTime;
     $("#resend").click(function () {
         var time = parseInt($("#time").text());
@@ -56,5 +91,30 @@
             time--;
             $("#time").text(time);
         }, 1000);
+    });
+
+    $('.btn-group>.btn').click(function () {
+        var parentEle = $(this).parent();
+        if (parentEle.hasClass('single-check')) {
+            parentEle.find('.btn').each(function () {
+                $(this).removeClass('active');
+                $(this).removeClass('btn-success');
+                $(this).addClass('btn-default');
+            });
+            $(this).addClass('active');
+            $(this).removeClass('btn-default');
+            $(this).addClass('btn-success');
+        } else {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+            } else {
+                $(this).addClass('active');
+            }
+            if ($(this).hasClass('btn-success')) {
+                $(this).removeClass('btn-success');
+            } else {
+                $(this).addClass('btn-success');
+            }
+        }
     });
 </script>

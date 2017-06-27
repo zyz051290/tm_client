@@ -46,6 +46,12 @@
 </div>
 <script type="text/javascript" src="purchaser/recycle.html.js"></script>
 <script type="text/javascript">
+    var userType = 1;
+    $(function () {
+        if (userType == 2) {
+            $("#virtual").hide();
+        }
+    })
     $("#finish").click(function () {
         if($("#payMethod .btn").hasClass('active')){
             if($(".active").val()=='cash'){
