@@ -1,0 +1,24 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i>  返回 </div>
+        <div style="margin-left: 38%;font-size: 12pt;font-weight: bold">企业回收</div>
+    </div>
+    <form method="post" id="anonymous_form" action="#/service_group/recCategory" name="kk">
+        <div class="panel-body">
+            <label>用户信息</label>
+            <div style="padding: 5% 0;width:100%;min-height: 105px;">
+
+                <div style="width: 70%;float: right;padding-bottom: 10px;"><input id="scanning" type="text" style="outline: medium;border-top:none;border-left: none;border-right: none" placeholder="点击黄色键扫条形码..."/></div>
+                <hr style="margin:10px 2.5%;width:95%;border-top:1px solid #eee;clear: both;"/>
+                <div style="width: 70%;float: right;padding-bottom: 10px;"><input id="username" type="text" style="outline: medium;border-top:none;border-left: none;border-right: none" placeholder="或在此输入用户名..."/></div>
+                <hr style="margin:10px 2.5%;width:95%;border-top:1px solid #eee;clear: both;"/>
+                <div style="width: 70%;float: right;padding-bottom: 10px;"><input id="attention" type="text" style="outline: medium;border:none;color: red" value="用户名和条形码不能全为空" /></div>
+            </div>
+        </div>
+        <div id="next" style="text-align: center;display:block;"><button type="button"  class="btn btn-info" onclick="select()">查询</button></div>
+    </form>
+</div>
+<script type="text/javascript" src="service_group/company_recycle.html.js"></script>
+<script type="text/javascript">
+
+</script>

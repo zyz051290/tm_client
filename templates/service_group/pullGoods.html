@@ -1,0 +1,92 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 返回 </div>
+        <label style="margin-left: 25%;">拉货管理</label>
+    </div>
+    <div class="form-group" id="pullType" style="text-align: center;margin-top: 15px">
+        <div class="btn-group single-check" role="group">
+            <button type="button" id="pull_1"  value="pull_1" class="btn btn-success active">待拉货</button>
+            <button type="button" id="pull_2"  value="pull_2" class="btn btn-default">已拉货</button>
+            <button type="button" id="pull_3"  value="pull_3" class="btn btn-default">已验收</button>
+            <button type="button" id="pull_4"  value="pull_4" class="btn btn-default">挂起</button>
+        </div>
+    </div>
+    <div style="width: 95%;margin: 0 2.5%;">
+        <table class="table table-bordered">
+            <tr>
+                <td style="text-align: left"><input type="checkbox" value="cm" id="check">&nbsp;<strong>订单号</strong></td>
+                <td style="text-align: center"><strong>件数</strong></td>
+                <td style="text-align: center"><strong>时间</strong></td>
+                <td style="display: none"><strong>拉货人</strong></td>
+                <td style="display: none"><strong>验货人</strong></td>
+            </tr>
+            <tr style="text-align: center">
+                <td><input type="checkbox" value="cm" name="sem"><a href="#/service_group/pullDetail">201706061311</a> </td>
+                <td>5</td>
+                <td>2017-06-06 13:11</td>
+                <td style="display: none">潘金龙</td>
+                <td style="display: none">潘金龙</td>
+            </tr>
+            <tr style="text-align: center">
+                <td><input type="checkbox" value="cm" name="sem"><a href="#/service_group/pullDetail">201706061312</a> </td>
+                <td>2</td>
+                <td>2017-06-06 13:12</td>
+                <td style="display: none">潘金龙</td>
+                <td style="display: none">潘金龙</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer navbar-fixed-bottom mobile-width" style="background-color: #e8e8e8;text-align: center">
+       <button class="btn pull_2 btn-info" style="display: none;">合并拉货</button>
+    </div>
+</div>
+<script type="text/javascript" src="service_group/pullGoods.html.js"></script>
+<script type="text/javascript">
+    $(".pull_1").hide();
+    $(".pull_2").show();
+    $(".table tr input").show();
+    $(".table tr").find('td:eq(3)').hide();
+    $("#pullType .btn").click(function () {
+        if($("#pullType .btn").hasClass('active')){
+            if($(this).val()=='pull_1'){
+                $(".pull_1").hide();
+                $(".pull_2").show();
+                $(".table tr input").show();
+                $(".table tr").find('td:eq(3)').hide();
+            }
+            if($(this).val()=='pull_2'){
+                $(".pull_1").hide();
+                $(".pull_2").hide();
+                $(".table tr input").hide();
+                $(".table tr").find('td:eq(3)').show();
+                $(".table tr").find('td:eq(4)').hide();
+            }
+            if($(this).val()=='pull_3'){
+                $(".pull_1").hide();
+                $(".pull_2").hide();
+                $(".table tr input").hide();
+                $(".table tr").find('td:eq(3)').hide();
+                $(".table tr").find('td:eq(4)').show();
+            }
+            if($(this).val()=='pull_4'){
+                $(".pull_1").hide();
+                $(".pull_2").hide();
+                $(".table tr input").hide();
+                $(".table tr").find('td:eq(3)').hide();
+                $(".table tr").find('td:eq(4)').hide();
+            }
+        }
+    });
+    $("#check").click(function(){//全选 或全不选
+        var aa=$(":checkbox[name='sem']");
+        if(this.checked){
+            for(i=0;i<aa.length;i++){
+                aa[i].checked=true;//把对应项的checked属性设置为true
+            }
+        }else{
+            for(i=0;i<aa.length;i++){
+                aa[i].checked=false;//把对应项的checked属性设置为true
+            }
+        }
+    });
+</script>
