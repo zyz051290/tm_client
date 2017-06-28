@@ -1,10 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
 </head>
 <body>
-
+<style>
+    #demo {
+        width: 590px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+</style>
+<div id="demo">
+    <p>{{a}}</p>
+    <p v-text="a"></p>
+    <p v-html="a"></p>
+    <button @click="plus">+</button>
+</div>
+<div id="app">
+<h1 v-text="title"></h1>
+<h1 v-html="hello"></h1>
+<h1 v-text="hello"></h1>
+<table style="border: 1px solid #e4b9b9">
+    <tr v-for="item in items"><td v-bind:class="{finished: item.isFinished}">{{item.label}}</td></tr>
+</table>
+</div>
+<script src="../js/vue.min.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                title: '123',
+                hello: '<span>?</span>123',
+                items: [
+                    {
+                        label: '工作',
+                        isFinished: true
+                    },
+                    {
+                        label: '吃饭',
+                        isFinished: false
+                    }
+                ]
+            }
+        }
+    })
+</script>
+<script type="text/javascript">
+    var demo = new Vue({
+        el: '#demo',
+        data:{
+            a:1
+        },
+        methods:{
+            plus:function () {
+                this.a++
+            }
+        }
+    })
+</script>
+<style>
+    .finished{
+        color: #2aabd2;
+    }
+</style>
 </body>
 </html>
