@@ -53,4 +53,7 @@ function selectRadio(i){
     if(i==3){
         window.location.href='#/service_group/complete';
     }
+    if(i==4){
+        window.location.href='#/service_group/checked_recycle';
+    }
 }

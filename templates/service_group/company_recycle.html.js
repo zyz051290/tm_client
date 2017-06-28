@@ -7,6 +7,10 @@ function select() {
         $('#attention').show();
     }else {
         $('#attention').hide();
-        kk.submit();
+        if($('#scanning').val()=="12321"||$('#username').val()=="ttj"){
+            kk.submit();
+        }else{
+            $('#myModal').show();
+        }
     }
 }
