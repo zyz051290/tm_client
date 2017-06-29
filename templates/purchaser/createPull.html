@@ -1,0 +1,85 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden;">
+        <div onclick="history.go(-1)" class="pull-left"><i class="glyphicon glyphicon-chevron-left"></i> 返回</div>
+        <label style="margin-left: 25%;">创建拉货</label>
+        <buttom onclick="location.href='#/purchaser/pullGoods'" style="float: right;padding: 1px 10px;"
+                class="btn btn-default">确定
+        </buttom>
+    </div>
+    <div style="width: 95%;margin: 10px 2.5%;">
+        <table class="table table-bordered" style="text-align: center">
+            <tr style="text-align: center">
+                <td>品类</td>
+                <td>件数</td>
+                <td>总重量(公斤)</td>
+                <td>净重(公斤)</td>
+            </tr>
+            <tr style="text-align: center">
+                <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                <td><input type="text" style="text-align: right;width: 50px;padding:3px 8px;margin:auto;"
+                           class="form-control"
+                           value="0"/></td>
+                <td>
+                    <input type="text" style="text-align: right;width: 50px;padding:3px 8px;display: inline-block"
+                           class="form-control"
+                           value="0"/>
+                </td>
+                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
+            </tr>
+            <tr style="text-align: center">
+                <td><span style="padding: 6px 0;display: block;">塑料瓶</span></td>
+                <td><input type="text" style="text-align: right;width: 50px;margin:auto;padding:3px 8px;"
+                           class="form-control"
+                           value="0"/></td>
+                <td>
+                    <input type="text" style="text-align: right;width: 50px;padding:3px 8px;display: inline-block"
+                           class="form-control"
+                           value="0"/>
+                </td>
+                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    /**
+     * 未完待续
+     * 从数据看获取不同计算类别(按公斤|个计算)并获取配置好的
+     * 包装袋重量，计算净重
+     */
+    var sum = 2;//单位kg
+    var per = 0.025;//单位kg
+
+    $(".table tr").each(function () {
+        var val = $(this).find("td:eq(1)>input");
+        var total = $(this).find("td:eq(3)>span")
+        // var unit = $(this).find("td:eq(2)").text();
+        $(this).find("td:eq(1)>input").focus(function () {
+            if (this.value == 0) {
+                this.value = "";
+            }
+        });
+        $(this).find("td:eq(1)>input").blur(function () {
+            if (this.value == '') {
+                this.value = 0;
+            }
+        });
+        $(this).find("td:eq(2)>input").focus(function () {
+            if (this.value == 0) {
+                this.value = "";
+            }
+        });
+        $(this).find("td:eq(2)>input").blur(function () {
+            if (this.value == '') {
+                this.value = 0;
+            }
+            if (this.value != '') {
+                if (total.text(this.value - sum * val.val()) <= 0) {
+                    total.text(0);
+                } else {
+                    total.text(this.value - sum * val.val());
+                }
+            }
+        });
+    });
+</script>

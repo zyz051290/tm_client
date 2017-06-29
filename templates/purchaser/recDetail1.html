@@ -1,0 +1,66 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 回收订单明细 </div>
+    </div>
+    <div class="panel-body">
+        <label style="font-size: 18px;margin-left: 15px;display: block">现金结算明细</label>
+        <table class="table table-bordered" style="width: 80%;margin: 0 auto">
+            <tr>
+                <td >订单编号：</td>
+                <td><a data-toggle="modal" data-target="#myModal">KFG0212321</a></td>
+            </tr>
+            <tr>
+                <td >用户名：</td>
+                <td>小伟</td>
+            </tr>
+            <tr>
+                <td >现金结算：</td>
+                <td>111.0元</td>
+            </tr>
+        </table>
+        <div style="text-align: center;margin-top: 40px">
+            <button type="button" onclick="location.href='#/purchaser/home'" class="btn btn-info">确定</button>
+        </div>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <label style="font-size: 18px;margin: 10px 0 0 15px;display: block">回收订单明细</label>
+                    <table class="table table-striped">
+                        <tr style="background-color:#444;color: #fff;">
+                            <th style="text-align: center">品类</th>
+                            <th style="text-align: center">数量</th>
+                            <th style="text-align: center">单价</th>
+                            <th style="text-align: center">小计</th>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11111</span></td>
+                            <td><span style="padding: 6px 0;display: block;">111111</span></td>
+                            <td><span style="padding: 6px 0;display: block;">999999</span></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                            <td>11111</td>
+                            <td><span style="padding: 6px 0;display: block;">999999</span></td>
+                            <td><span style="padding: 6px 0;display: block;">999999</span></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11111</span></td>
+                            <td><span style="padding: 6px 0;display: block;">999999</span></td>
+                            <td><span style="padding: 6px 0;display: block;">9999999</span></td>
+                        </tr>
+                    </table>
+                    <div style="text-align: center;padding-bottom: 20px">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".table tr").each(function () {
+        $(this).find('td:first').css('text-align','right');
+    });
+</script>

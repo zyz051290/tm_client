@@ -1,0 +1,138 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        <div onclick="history.go(-1)" class="text-left" style="float: left;width:20%;line-height: 26px;">
+            <i class="glyphicon glyphicon-chevron-left"></i> 返回
+        </div>
+        <div style="width:60%;float: left;text-align: center;font-weight: bold;font-size: 12pt;line-height: 26px;">
+            客服提醒
+        </div>
+    </div>
+    <div class="form-group" style="text-align: center;margin-top: 15px;" id="types">
+        <div class="btn-group single-check">
+            <button type="button" id="btn_1" value="1" class="btn btn-success active">未查看</button>
+            <button type="button" id="btn_2" value="2" class="btn btn-default">已回复</button>
+            <button type="button" id="btn_3" value="3" class="btn btn-default">已完成</button>
+        </div>
+    </div>
+    <div style="width: 95%;margin: 0 2.5%;">
+        <table class="table table-bordered" id="tb1">
+            <tr onclick="javascript:selectRadio(1)">
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">1</td>
+                <td style="text-align: right">匿名：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr onclick="javascript:selectRadio(1)">
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">2</td>
+                <td style="text-align: right">萧萧：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">3</td>
+                <td style="text-align: right">小伟：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">4</td>
+                <td style="text-align: right">匿名：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+        </table>
+        <table class="table table-bordered" id="tb2" hidden="hidden">
+            <tr onclick="javascript:selectRadio(2)">
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">1</td>
+                <td style="text-align: right">匿名1：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr onclick="javascript:selectRadio(2)">
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">2</td>
+                <td style="text-align: right">萧萧1：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">3</td>
+                <td style="text-align: right">小伟1：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">4</td>
+                <td style="text-align: right">匿名1：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+        </table>
+        <table class="table table-bordered" id="tb3" hidden="hidden">
+            <tr onclick="javascript:selectRadio(3)">
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">1</td>
+                <td style="text-align: right">匿名2：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr onclick="javascript:selectRadio(3)">
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">2</td>
+                <td style="text-align: right">萧萧2：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">3</td>
+                <td style="text-align: right">小伟2：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">4</td>
+                <td style="text-align: right">匿名2：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+            <tr>
+                <td style="text-align: right">期望上门时间：</td>
+                <td>2017-02-11 09:00</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="purchaser/service_reminder.html.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript">
+
+</script>

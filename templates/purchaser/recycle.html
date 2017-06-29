@@ -1,0 +1,114 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        <div onclick="history.go(-1)" class="pull-left"><i class="glyphicon glyphicon-chevron-left"></i> 个人回收</div>
+    </div>
+    <form method="post" id="rec">
+        <div style="padding: 20px 5% 0;">
+            <label>用户信息</label>
+            <div class="userinfo" style="border: 1px solid #000;padding: 15px 0;min-height: 101px;">
+                <div class="username"
+                     style="width:30%;float: left;text-align: right;display: block;height: 35px;padding-bottom: 10px;">
+                    <label>用户名：</label></div>
+                <div class="anonymous"
+                     style="width:30%;float: left;text-align: right;display: none;height: 35px;padding-bottom: 10px;">
+                    <label>匿名：</label></div>
+                <div style="width: 70%;float: right;padding-bottom: 10px;height: 35px;">
+                    <input type="text" style="outline: medium;border-top:none;border-left: none;border-right: none"
+                           name="username" placeholder="请填写用户名..."/>
+                </div>
+                <hr style="margin:10px 2.5%;width:95%;border-top:1px solid #eee;clear: both;"/>
+                <div style="width:30%;float: left;text-align: right;height: 35px;;"><label>用户地址：</label></div>
+                <div style="width: 70%;float: right;padding-bottom: 10px;height: 35px;">
+                    <input type="text" style="outline: medium;border-top:none;border-left: none;border-right: none"
+                           name="address" placeholder="请填写用户地址..."/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" id="menu" style="padding: 10px 20%;">
+            <div class="btn-group single-check" role="group">
+                <button type="button" id="fun_1" value="1" class="btn btn-default">条形码</button>
+                <button type="button" id="fun_2" value="2" class="btn btn-default">匿名</button>
+                <button type="button" id="fun_3" value="3" class="btn btn-default">手机号</button>
+            </div>
+        </div>
+        <div class="form-group fun_1" style="display:none;mrgin-top:20px;padding:0 5%;text-align: center">
+            <div class="col-xs-9">
+                <input type="text" class="form-control" name="barcode" placeholder="请输入条形码...">
+            </div>
+            <div class="col-xs-3">
+                <button style="margin-bottom: 35px" class="btn btn-info btn-ms">扫描</button>
+            </div>
+        </div>
+        <div class="form-group fun_3" style="display:none;mrgin-top:20px;padding:0 5%;text-align: center">
+            <div class="col-xs-9">
+                <input type="text" style="outline: medium;" class="form-control" name="phonenum"
+                       placeholder="请输入手机号..."/>
+            </div>
+            <div class="col-xs-3">
+                <button style="margin-bottom: 35px" class="btn btn-info btn-ms">查询</button>
+            </div>
+        </div>
+        <div id="next" style="text-align: center;display:block;">
+            <button type="submit" class="btn btn-info">下一步</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="purchaser/recycle.html.js"></script>
+<script type="text/javascript">
+    jQuery.validator.addMethod("isMobile", function (value, element) {
+        var length = value.length;
+        var mobile = /^(((1[3578][0-9]{1})|(15[0-9]{1}))+\d{8})$/;
+        return this.optional(element) || (length == 11 && mobile.test(value));
+    }, "<span style=\'color:red\'>请正确填写您的手机号码</span>");
+
+    $(function () {
+        $("#rec").validate({
+            focusInvalid: true,
+            onkeyup: false,
+            submitHandler: function (form) {
+                window.location.href = '#/purchaser/recCategory'
+                /* 根据当前选择回收类型，只有匿名回收仅显示现金结算
+                 var param = $("#rec").serialize();
+                 $.ajax({
+                 url : "#/purchaser/recCategory",
+                 type : "post",
+                 dataType : "json",
+                 data: param,
+                 });*/
+            },
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 3
+                },
+                address: {
+                    required: true,
+                    minlength: 3
+                },
+                phonenum: {
+                    required: true,
+                    isMobile: true
+                },
+                barcode: {
+                    required: true
+                }
+            },
+            messages: {
+                username: {
+                    required: "<span style=\"color:red;padding-top: 10px;\">客户名称不能为空</span>",
+                    minlength: jQuery.validator.format("不能少于3个字节")
+                },
+                address: {
+                    required: "<span style=\"color:red;padding-top: 10px;\">地址不能为空</span>",
+                    minlength: jQuery.validator.format("不能少于3个字节")
+                },
+                phonenum: {
+                    required: "<span style=\"color:red;padding-top: 10px;\">客户手机号不能为空</span>",
+                },
+                barcode: {
+                    required: "<span style=\"color:red;padding-top: 10px;\">条形码不能为空</span>"
+                }
+            }
+        });
+    });
+</script>
