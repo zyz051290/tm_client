@@ -1,0 +1,48 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        <div onclick="history.go(-1)" class="text-left" style="float: left;width:20%;line-height: 28px;cursor: pointer;"> <i class="glyphicon glyphicon-chevron-left"></i>返回</div>
+        <div  style="width:60%;float: left;text-align: center;font-weight: bold;font-size: 12pt;line-height: 26px;">工作日志</div>
+    </div>
+    <div class="mobile-width" style="background-color: #e8e8e8;text-align: center">
+        <button class="btn pull_1 btn-default">查询当日</button>
+        <button class="btn pull_2 btn-default">查询当周</button>
+        <button class="btn pull_3 btn-default">查询当月</button>
+    </div>
+    <div style="width: 95%;margin: 15px 2.5%;">
+        <div class="form-group" style="margin-left: 20px;">
+            <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"/>
+            <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;月&nbsp;</span>
+            <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control" />
+            <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;日&nbsp;～</span>
+            <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control" />
+            <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;月&nbsp;</span>
+            <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control" />
+            <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;日&nbsp;</span>
+        </div>
+        <div style="text-align: center;">
+            <div class="form-group" id="types">
+                <div class="btn-group single-check" style="margin-top: 15px;">
+                    <button type="button" id="btn_1"  value="1" class="btn btn-success active">回收详情</button>
+                    <button type="button" id="btn_2" value="2" class="btn btn-default">服务用户</button>
+                </div>
+            </div>
+        </div>
+        <hr style="line-height: 5px;margin-top: 5px;border: none;border-top: 3px ridge black; width: 100%;">
+        <div style="position: fixed;bottom:0;left:0;width: 23.5%">
+            <input type="button" value="上拉显示更多" style="width: 100%">
+        </div>
+    </div>
+    <div style="width: 95%;margin: 10px 2.5%;">
+         <p>回收总金额：30000元</p><p>新增用户：12个</p><p>服务用户：234个</p>
+    <table class="table table-bordered" >
+        <tr style="text-align: center;"><td>品类</td><td>数量</td><td>单价</td><td>金额</td></tr>
+        <tr style="text-align: center;"><td>纸类</td><td>12</td><td>234.00</td><td>4324.88</td></tr>
+        <tr style="text-align: center;"><td>纸类</td><td>12</td><td>234.00</td><td>4324.88</td></tr>
+    </table>
+    </div>
+</div>
+<script type="text/javascript" src="service_group/daily_log.html.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript">
+
+</script>
