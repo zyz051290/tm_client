@@ -1,0 +1,28 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        <div onclick="history.go(-1)" class="text-left" style="float: left;width:20%;line-height: 28px;cursor: pointer;">
+            <i class="glyphicon glyphicon-chevron-left"></i> 返回</div>
+        <div  style="width:60%;float: left;text-align: center;font-weight: bold;font-size: 12pt;line-height: 26px;">已完成明细</div>
+    </div>
+    <center>
+        <table border="0" width="80%" id="tb1" style="margin-top: 30px;line-height: 25px;">
+            <tr><td style="float: right" width="70px";>销售编号：</td><td>10001562</td></tr>
+            <tr><td style="float: right">结算时间：</td><td>2015-03-03 09:00</td></tr>
+            <tr><td style="float: right">地址：</td><td>北京东城区青园小区测试大街n号院n号楼</td></tr>
+            <tr><td style="float: right">客户名称：</td><td>某某工程技术（北京）有限公司_客服部</td></tr>
+            <tr><td style="float: right">联系电话：</td><td>13765667876</td></tr>
+            <tr><td style="float: right">联系人：</td><td>某经理</td></tr>
+            <tr><td style="float: right">结算方式：</td><td>转账</td></tr>
+            <tr><td style="float: right">总金额：</td><td>12500.00元</td></tr>
+            <tr><td style="float: right">内容：</td><td>A4 80G-3(50)</td></tr>
+            <tr><td style="float: right">备注：</td><td></td></tr>
+        </table>
+        <input type="button" class="btn btn-info" style="margin-top: 30px" value="返回列表" onclick="go()">
+    </center>
+</div>
+<script type="text/javascript" src="service_group/service_reminder.html.js"></script>
+<script type="text/javascript">
+function go() {
+    window.location.href='#/service_group/service_reminder';
+}
+</script>

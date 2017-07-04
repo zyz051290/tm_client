@@ -1,10 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        欢迎： <b>小明</b>
+        <a class="pull-right logout" href="#/login">退出</a>
+    </div>
+    <div class="panel-body">
 
-service_group...
-</body>
-</html>
+        <div class="container-fuild home-gridview">
+            <div class="row">
+                <div href="#/service_group/anonymous_recycle" class="grid-col col-xs-5 col-xs-offset-1">
+                    <br/>
+                    <i class="glyphicon glyphicon-credit-card"></i>
+                    <h4>匿名回收</h4>
+                </div>
+                <div href="#/service_group/company_recycle" class="grid-col col-xs-5">
+                    <br/>
+                    <i class="glyphicon glyphicon-stats"></i>
+                    <h4>企业回收</h4>
+                </div>
+
+                <div href="#/service_group/pullGoods" class="grid-col col-xs-5 col-xs-offset-1">
+                    <br/>
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                    <h4>拉货提醒</h4>
+                </div>
+                <div href="#/service_group/service_reminder" class="grid-col col-xs-5">
+                    <br/>
+                    <i class="glyphicon glyphicon-envelope"></i>
+                    <h4>客服提醒</h4>
+                    <span class="tm-badge badge pull-right">4</span>
+                </div>
+
+                <div href="#/service_group/daily_log" class="grid-col col-xs-5 col-xs-offset-1">
+                    <br/>
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    <h4>工作日志</h4>
+                </div>
+                <div href="#/service_group/binding_core" class="grid-col col-xs-5">
+                    <br/>
+                    <i class="glyphicon glyphicon-barcode"></i>
+                    <h4>绑定条码</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.grid-col').click(function(){
+        var url = $(this).attr('href');
+        window.location.href = url;
+    });
+</script>

@@ -1,0 +1,47 @@
+<div class="panel panel-default tm-panel">
+    <div class="panel-heading" style="overflow: hidden">
+        <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 回收品类 </div>
+    </div>
+    <div class="panel-body">
+        <label>回收品类</label>
+        <div>
+        <table class="table table-striped" id="recycle_tab">
+            <tr style="background-color:#444;color: #fff;">
+                <th style="text-align: center">品类</th>
+                <th style="text-align: center">数量</th>
+                <th style="text-align: center">单价</th>
+                <th style="text-align: center">小计</th>
+            </tr>
+            <tr style="text-align: center">
+                <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                <td><input type="text" class="form-control" value="0" size="2" name="num"/></td>
+                <td name="single_price"><span style="padding: 6px 0;display: block;">1</span></td>
+                <td><span style="padding: 6px 0;display: block;"></span></td>
+            </tr>
+            <tr style="text-align: center">
+                <td><span style="padding: 6px 0;display: block;">书本</span></td>
+                <td><input type="text" class="form-control" value="0" size="2"/></td>
+                <td><span style="padding: 6px 0;display: block;">2</span></td>
+                <td><span style="padding: 6px 0;display: block;"></span></td>
+            </tr>
+            <tr style="text-align: center">
+                <td><span style="padding: 6px 0;display: block;">纸张</span></td>
+                <td><input type="text" class="form-control" value="0" size="2"/></td>
+                <td><span style="padding: 6px 0;display: block;">3</span></td>
+                <td><span style="padding: 6px 0;display: block;"></span></td>
+            </tr>
+        </table>
+        </div>
+        <div class="col-xs-12">
+            <label style="vertical-align: top;font-size:16px;text-align: right;margin-top: 15px;">其他：</label>
+            <textarea cols="34" class="form-control col-sm-2 " style="resize: none" rows="5"></textarea>
+        </div>
+        <div id="prev"   style="text-align: center;">
+            <div class="col-xs-12" style="margin-top: 30px;">
+                <button type="button" onclick="location.href='#/service_group/home'" style="margin-right: 40px;"  class="btn btn-info">完成</button>
+                <button type="button" onclick="javascript:CancelOrder()"  class="btn btn-info">取消</button>
+             </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="service_group/recCategory.html.js"></script>
