@@ -5,32 +5,49 @@
     <div class="panel-body">
         <label>回收品类</label>
         <div>
-        <table class="table table-striped">
-            <tr style="background-color:#444;color: #fff;">
-                <th style="text-align: center">品类</th>
-                <th style="text-align: center">数量</th>
-                <th style="text-align: center">单价</th>
-                <th style="text-align: center">小计</th>
-            </tr>
-            <tr style="text-align: center">
-                <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
-                <td><input type="text" style="text-align: right" class="form-control" value="0" size="1"/></td>
-                <td><span class="unit" style="padding: 6px 0;display: block;">12</span></td>
-                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
-            </tr>
-            <tr style="text-align: center">
-                <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
-                <td><input type="text" style="text-align: right" class="form-control" value="0" size="1"/></td>
-                <td><span class="unit" style="padding: 6px 0;display: block;">13</span></td>
-                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
-            </tr>
-            <tr style="text-align: center">
-                <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
-                <td><input type="text" style="text-align: right" class="form-control" value="0" size="1"/></td>
-                <td><span class="unit" style="padding: 6px 0;display: block;">11</span></td>
-                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
-            </tr>
-        </table>
+            <table class="table table-striped">
+                <tr style="background-color:#444;color: #fff;">
+                    <th style="text-align: center">品类</th>
+                    <th style="text-align: center">数量</th>
+                    <th style="text-align: center">单价</th>
+                    <th style="text-align: center">小计</th>
+                </tr>
+                <tr style="text-align: center">
+                    <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                    <td><input type="text" style="width:70%;display:inline-block;text-align: right" name="num"
+                               class="form-control" value="0" size="1"/></td>
+                    <td><span class="unit" style="padding: 6px 0;display: block;">12</span></td>
+                    <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
+                </tr>
+                <tr style="text-align: center">
+                    <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                    <td><input type="text" style="width:70%;display:inline-block;text-align: right" name="num"
+                               class="form-control" value="0" size="1"/></td>
+                    <td><span class="unit" style="padding: 6px 0;display: block;">13</span></td>
+                    <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
+                </tr>
+                <tr style="text-align: center">
+                    <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                    <td><input type="text" style="width:70%;display:inline-block;text-align: right" name="num"
+                               class="form-control" value="0" size="1"/></td>
+                    <td><span class="unit" style="padding: 6px 0;display: block;">11</span></td>
+                    <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
+                </tr>
+                <tr style="text-align: center">
+                    <td><span style="padding: 6px 0;display: block;">电视</span></td>
+                    <td><input type="text" style="width:70%;display:inline-block;text-align: right" name="num"
+                               class="form-control" value="0" size="1"/></td>
+                    <td><span class="unit" style="padding: 6px 0;display: block;">11</span></td>
+                    <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
+                </tr>
+                <tr style="text-align: center">
+                    <td><span style="padding: 6px 0;display: block;">电脑显示屏</span></td>
+                    <td><input type="text" style="width:70%;display:inline-block;text-align: right" name="num"
+                               class="form-control" value="0" size="1"/></td>
+                    <td><span class="unit" style="padding: 6px 0;display: block;">11</span></td>
+                    <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
+                </tr>
+            </table>
         </div>
         <!--<div class="col-xs-12">
             <label style="vertical-align: top;font-size:16px;text-align: right;margin-top: 15px;">其他：</label>
@@ -38,15 +55,34 @@
         </div>-->
         <div id="prev" style="text-align: center;">
             <div class="col-xs-12" style="margin-top: 30px;">
-                <button type="button" onclick="location.href='#/purchaser/recycle'" style="margin-right: 40px;"
-                        class="btn btn-info">上一步
+                <button type="submit" style="margin-right: 40px;" class="btn btn-info" id="finish">完成
                 </button>
-                <button type="button" onclick="location.href='#/purchaser/recList'" class="btn btn-info">下一步</button>
+                <button type="button" id="cancel" class="btn btn-info">取消</button>
             </div>
         </div>
     </div>
 </div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" style="margin-top:180px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button id="goback" type="submit" class="btn btn-info">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script type="text/javascript">
+    $("#cancel").click(function () {
+        $("#myModal").css({'display': 'block'});
+        $(".modal-footer").css('display', 'block');
+        $("#myModal").addClass("in");
+        $(".modal-body").text("确定取消？");
+        $("#goback").click(function () {
+            window.location.href = '#/purchaser/home';
+        });
+    });
     $(".table tr").each(function () {
         var val = $(this).find("td:eq(1)>input");
         var total = $(this).find("td:eq(3)>span")
@@ -70,5 +106,22 @@
                 }
             }
         });
+    });
+    $("#finish").click(function () {
+        /*
+         根据数量进行对比
+         */
+        $(".modal-footer").css('display', 'none');
+        $(".table tr").not(":eq(0)").each(function (rows) {
+            var num = $(this).find("td:eq(1)>input").val();
+            if (num != 0) {
+                window.location.href = "#/purchaser/recList";
+                return false;
+            }
+        })
+        $("#myModal").css('display', 'block');
+        $("#myModal").addClass("in");
+        $("#myModal").fadeToggle(2000);
+        $(".modal-body").text("请至少选择一项输入数量！");
     });
 </script>

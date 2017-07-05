@@ -40,7 +40,9 @@
             </div>
         </div>
         <div id="prev"   style="text-align: center;margin-top: 30px">
-            <button type="button" id="finish"  class="btn btn-info">完成</button>
+            <button type="button" id="finish" class="btn btn-info">完成</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" id="update" class="btn btn-info">修改</button>
         </div>
     </div>
 </div>
@@ -62,5 +64,11 @@
         }else{
             alert("请选一种付款方式");
         }
+    });
+    $("#update").click(function () {
+        $(".table tr").each(function () {
+            var val = $(this).find("td:eq(1)").text();
+            $(this).find("td:eq(1)").html('<input type="text" class="form-control" value="' + val + '" size="1" />');
+        });
     });
 </script>

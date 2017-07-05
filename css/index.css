@@ -75,3 +75,8 @@ a:hover {
     background-color: #d9edf7;
     cursor: pointer;
 }
+
+/**弹出框**/
+.modal-open {
+    padding: 0 !important;
+}
