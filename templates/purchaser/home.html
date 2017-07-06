@@ -89,6 +89,7 @@
         $("#myModal").addClass("in");
         $(".modal-body").text("确定退出？");
         $("#goback").click(function () {
+            $("div").remove('.modal-backdrop');
             window.location.href = '#/login';
         });
 //        $("#cancel").click(function () {
