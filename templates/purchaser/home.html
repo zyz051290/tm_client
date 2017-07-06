@@ -1,9 +1,9 @@
 <div class="panel panel-default tm-panel">
     <div class="panel-heading" style="overflow: hidden">
         欢迎： <b>小明</b>
-        <a class="pull-right logout" href="#/login">退出</a>
+        <span class="pull-right logout" data-toggle="modal" data-target="#myModal">退出</span>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" style="padding: 5px 15px 0">
         <div style="width: 120px;height: 45px;margin: 0 auto;">
             <img src="/tm_client/images/logo.jpg" style="width: 120px;height: 45px" alt="logo">
         </div>
@@ -66,10 +66,35 @@
         </div>
     </div>
 </div>
-
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" style="margin-top:180px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div style="text-align: center;font-size: 16px;font-weight: bold" class="modal-body"></div>
+            <div class="modal-footer">
+                <button id="goback" type="submit" class="btn btn-info">确定</button>
+                <button id="cancel" type="submit" data-dismiss="modal" class="btn btn-info">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script type="text/javascript">
     $('.grid-col').click(function(){
         var url = $(this).attr('href');
         window.location.href = url;
+    });
+    $(".logout").click(function () {
+        $("#myModal").css('display', 'block');
+        $(".modal-footer").css('display', 'block');
+        $("#myModal").addClass("in");
+        $(".modal-body").text("确定退出？");
+        $("#goback").click(function () {
+            window.location.href = '#/login';
+        });
+//        $("#cancel").click(function () {
+//            $("#myModal").css({'display': 'none'});
+//            $(".modal-footer").css('display', 'none');
+//            $("#myModal").removeClass("in");
+//        });
     });
 </script>
