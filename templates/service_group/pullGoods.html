@@ -1,6 +1,6 @@
 <div class="panel panel-default tm-panel">
     <div class="panel-heading" style="overflow: hidden">
-        <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 返回 </div>
+        <div onclick="back()" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 返回 </div>
         <label style="margin-left: 25%;">拉货管理</label>
     </div>
     <div class="form-group" id="pullType" style="text-align: center;margin-top: 15px">
@@ -89,4 +89,7 @@
             }
         }
     });
+    function back() {
+        window.location.href='#/service_group/home';
+    }
 </script>

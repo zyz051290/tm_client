@@ -6,8 +6,28 @@ function CancelOrder(){
         window.location.href="#/service_group/home";
     }
 }
-$("#recycle_tab td input").blur(function () {
-   var a = $(this).val();
-   var b =$(this).parent;
-   alert(b);
+
+$(".table tr").each(function () {
+    var val = $(this).find("td:eq(1)>input");
+    var total = $(this).find("td:eq(3)>span");
+    var unit = $(this).find("td:eq(2)").text();
+    $(this).find("td:eq(1)>input").focus(function () {
+        if (this.value == 0) {
+            this.value = "";
+        }
+    });
+    $(this).find("td:eq(1)>input").blur(function () {
+        if (this.value == '') {
+            this.value = 0;
+            total.text(unit * this.value);
+        }
+        if (this.value != '') {
+            if (!isNaN(this.value)) {
+                total.text(unit * this.value);
+            } else {
+                this.value = 0;
+                alert("请填写数字！");
+            }
+        }
+    });
 });
