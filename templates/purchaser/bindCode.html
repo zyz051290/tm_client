@@ -49,9 +49,9 @@
         } else {
             $("#myModal").css('display', 'block');
             $("#myModal").addClass("in");
-            $("#myModal").fadeToggle(3000);
+            //$("#myModal").fadeToggle(3000);
             $(".modal-body").text("条形码绑定成功！");
-            window.location.href = '#/purchaser/home';
+            setTimeout("window.location.href = '#/purchaser/home'", 1000);
         }
 
 

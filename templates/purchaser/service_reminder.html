@@ -9,130 +9,117 @@
     </div>
     <div class="form-group" style="text-align: center;margin-top: 15px;" id="types">
         <div class="btn-group single-check">
-            <button type="button" id="btn_1" value="1" class="btn btn-success active">未查看</button>
-            <button type="button" id="btn_2" value="2" class="btn btn-default">已回复</button>
+            <button type="button" id="btn_1" value="1" class="btn btn-success active">未回复</button>
+            <button type="button" id="btn_2" value="2" class="btn btn-default">未完成</button>
             <button type="button" id="btn_3" value="3" class="btn btn-default">已完成</button>
         </div>
     </div>
     <div style="width: 95%;margin: 0 2.5%;">
-        <table class="table table-bordered" id="tb1">
-            <tr onclick="javascript:selectRadio(1)">
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">1</td>
-                <td style="text-align: right">匿名：</td>
-                <td>2017-02-11 09:00</td>
+        <table class="table " id="tb1">
+            <tr onclick="selectRadio(1)">
+                <td style="padding: 5px 5px 5px;vertical-align: middle;">1</td>
+                <td colspan="2">
+                    <dd>
+                        <span>花市北里西区516号5单元501</span>&nbsp;&nbsp;<span>7-29 12:00</span>
+                    </dd>
+                    <dd style="margin-left: 35px;margin-top: 5px;">
+                        <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"
+                               value="12"/>
+                        <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;时&nbsp;</span>
+                        <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"
+                               value="20"/>
+                        <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;分&nbsp;</span>
+                        <button type="button" class="btn btn-default">回复</button>
+                    </dd>
+                </td>
             </tr>
-            <tr onclick="javascript:selectRadio(1)">
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">2</td>
-                <td style="text-align: right">萧萧：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">3</td>
-                <td style="text-align: right">小伟：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">4</td>
-                <td style="text-align: right">匿名：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
+            <tr onclick="selectRadio(1)">
+                <td style="padding: 5px 5px 5px;vertical-align: middle">2</td>
+                <td colspan="2">
+                    <dd>
+                        <span>花市北里西区516号5单元501</span>&nbsp;&nbsp;<span>7-29 12:00</span>
+                    </dd>
+                    <dd style="margin-left: 35px;margin-top: 5px;">
+                        <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"
+                               value="12"/>
+                        <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;时&nbsp;</span>
+                        <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"
+                               value="20"/>
+                        <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;分&nbsp;</span>
+                        <button type="button" class="btn btn-default">回复</button>
+                    </dd>
+                </td>
             </tr>
         </table>
-        <table class="table table-bordered" id="tb2" hidden="hidden">
-            <tr onclick="javascript:selectRadio(2)">
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">1</td>
-                <td style="text-align: right">匿名1：</td>
-                <td>2017-02-11 09:00</td>
+        <table class="table" id="tb2" hidden="hidden">
+            <tr onclick="selectRadio(2)">
+                <td style="padding: 5px;vertical-align: middle">1</td>
+                <td colspan="2">
+                    <dt style="margin-bottom: 0;">
+                        <span>花市北里西区516号5单元501</span>&nbsp;&nbsp;<span>7-29 12:00</span>
+                    </dt>
+                    <dl style="margin-bottom: 0;">
+                        <dd style="float: left;position: relative">
+                            <span style="display:block">上门时间：12：20</span>
+                            <span style="display:block">13901234567</span>
+                        </dd>
+                        <dd style="text-align: right;float: right;position: relative">
+                            <button type="button" class="btn btn-default">回复</button>
+                        </dd>
+                    </dl>
+                </td>
             </tr>
-            <tr onclick="javascript:selectRadio(2)">
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">2</td>
-                <td style="text-align: right">萧萧1：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">3</td>
-                <td style="text-align: right">小伟1：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">4</td>
-                <td style="text-align: right">匿名1：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
+            <tr onclick="selectRadio(2)">
+                <td style="padding: 5px;vertical-align: middle">1</td>
+                <td colspan="2">
+                    <dt style="margin-bottom: 0;">
+                        <span>花市北里西区516号5单元501</span>&nbsp;&nbsp;<span>7-29 12:00</span>
+                    </dt>
+                    <dl style="margin-bottom: 0;">
+                        <dd style="float: left;position: relative">
+                            <span style="display:block">上门时间：12：20</span>
+                            <span style="display:block">13901234567</span>
+                        </dd>
+                        <dd style="text-align: right;float: right;position: relative">
+                            <button type="button" class="btn btn-default">回复</button>
+                        </dd>
+                    </dl>
+                </td>
             </tr>
         </table>
-        <table class="table table-bordered" id="tb3" hidden="hidden">
-            <tr onclick="javascript:selectRadio(3)">
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">1</td>
-                <td style="text-align: right">匿名2：</td>
-                <td>2017-02-11 09:00</td>
+        <table class="table" id="tb3" hidden="hidden">
+            <tr onclick="selectRadio(3)">
+                <td style="padding: 5px;vertical-align: middle">1</td>
+                <td colspan="2">
+                    <dl style="margin-bottom: 0;">
+                        <span style="display: block;float: left;">潇潇</span>
+                        <span style="display: block;text-align: right">7-29 12:30</span>
+                    </dl>
+                    <dl style="margin-bottom: 0;">
+                        <span style="display: block;float: left;">回收订单编号：</span>
+                        <span style="display: block;text-align: right">HS345789098765456</span>
+                    </dl>
+                </td>
             </tr>
-            <tr onclick="javascript:selectRadio(3)">
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">2</td>
-                <td style="text-align: right">萧萧2：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">3</td>
-                <td style="text-align: right">小伟2：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 15px 5px;vertical-align: middle" rowspan="2">4</td>
-                <td style="text-align: right">匿名2：</td>
-                <td>2017-02-11 09:00</td>
-            </tr>
-            <tr>
-                <td style="text-align: right">期望上门时间：</td>
-                <td>2017-02-11 09:00</td>
+            <tr onclick="selectRadio(3)">
+                <td style="padding: 5px;vertical-align: middle">1</td>
+                <td colspan="2">
+                    <dl style="margin-bottom: 0;">
+                        <span style="display: block;float: left;">潇潇</span>
+                        <span style="display: block;text-align: right">7-29 12:30</span>
+                    </dl>
+                    <dl style="margin-bottom: 0;">
+                        <span style="display: block;float: left;">回收订单编号：</span>
+                        <span style="display: block;text-align: right">HS345789098765456</span>
+                    </dl>
+                </td>
             </tr>
         </table>
     </div>
 </div>
-<script type="text/javascript" src="purchaser/service_reminder.html.js"></script>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="purchaser/service_reminder.html.js"></script>
+
 <script type="text/javascript">
 
 </script>

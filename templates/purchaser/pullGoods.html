@@ -5,7 +5,7 @@
     </div>
     <div class="form-group" id="pullType" style="text-align: center;margin-top: 15px">
         <div class="btn-group single-check" role="group">
-            <button type="button" id="pull_0" value="pull_0" class="btn btn-default">拉货</button>
+            <button type="button" id="pull_0" value="pull_0" class="btn btn-success active">拉货</button>
             <button type="button" id="pull_1" value="pull_1" class="btn btn-default">待拉货</button>
             <button type="button" id="pull_2" value="pull_2" class="btn btn-default">已拉货</button>
             <button type="button" id="pull_3" value="pull_3" class="btn btn-default">已验收</button>
@@ -28,16 +28,38 @@
                 <td style="display: none">潘金龙</td>
                 <td style="display: none">潘金龙</td>
             </tr>
-            <tr style="text-align: center">
-                <td><input type="checkbox" value="cm"><a href="#/purchaser/pullDetail">201706061312</a></td>
-                <td>2</td>
-                <td>2017-06-06 13:12</td>
-                <td style="display: none">潘金龙</td>
-                <td style="display: none">潘金龙</td>
-            </tr>
         </table>
     </div>
-    <div class="panel-footer navbar-fixed-bottom mobile-width" style="background-color: #e8e8e8;padding:5px 49px;">
+
+    <div style="padding: 10px 2.5% 0;text-align: center;position: relative">
+        <div>
+            <label class="col-xs-3 control-label"> 扫码 </label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" name="barcode" placeholder="点击开始扫码">
+            </div>
+        </div>
+        <form>
+            <div>
+                <label class="col-xs-3 control-label"> 工号 </label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="worknum" placeholder="请输入工号">
+                </div>
+            </div>
+            <div>
+                <label class="col-xs-3 control-label">密码</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="password" placeholder="输入密码">
+                </div>
+            </div>
+            <br>
+            <div>
+                <button type="button" class="btn btn-info">确认</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="panel-footer navbar-fixed-bottom mobile-width" style="background-color: #e8e8e8;padding-left:49px;">
         <button onclick="location.href='#/purchaser/createPull'" class="btn pull_1 btn-info">创建拉货</button>
         &nbsp;&nbsp;
         <button class="btn pull_1 btn-success">申请</button>
@@ -51,6 +73,7 @@
 </div>
 <script type="text/javascript" src="purchaser/recycle.html.js"></script>
 <script type="text/javascript">
+
     $("#pullType .btn").click(function () {
         if ($("#pullType .btn").hasClass('active')) {
             if ($(this).val() == 'pull_0') {

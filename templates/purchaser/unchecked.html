@@ -4,11 +4,11 @@
             <i class="glyphicon glyphicon-chevron-left"></i> 返回
         </div>
         <div style="width:60%;float: left;text-align: center;font-weight: bold;font-size: 12pt;line-height: 26px;">
-            未查看明细
+            未回复明细
         </div>
     </div>
     <center>
-        <table border="0" width="80%" id="tb1" style="margin-top: 30px;line-height: 25px;">
+        <table border="0" width="90%" id="tb1" style="margin-top: 30px;line-height: 25px;">
             <tr>
                 <td style="float: right">回收订单编号：</td>
                 <td>13213213213213</td>
@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <td style="float: right">地址：</td>
-                <td>北京东城区青园小区</td>
+                <td>花市北里西区516号5单元501</td>
             </tr>
             <tr>
                 <td style="float: right">联系电话：</td>
@@ -36,27 +36,34 @@
             <tr>
                 <td colspan="2"><strong>预计上门时间：</strong></td>
             </tr>
-            <tr rowspan="2">
-                <td colspan="2">
-                    <input type="text" id="datetimepicker" class="form_datetime form-control" style="width: 100%">
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"/>
+                    <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;月&nbsp;</span>
+                    <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"/>
+                    <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;日&nbsp;</span>
+                    <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"/>
+                    <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;时&nbsp;</span>
+                    <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"/>
+                    <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;分&nbsp;</span>
                 </td>
             </tr>
         </table>
-        <input type="button" class="btn btn-info" style="margin-top: 30px" value="收到确认">
+        <button type="button" class="btn btn-info" style="margin-top: 30px">回&nbsp;&nbsp;&nbsp;&nbsp;复</button>
     </center>
 </div>
 <script type="text/javascript" src="purchaser/service_reminder.html.js"></script>
 
-<script type="text/javascript">
-    $(".form_datetime").datetimepicker({
-        format: "yyyy-mm-dd hh:ii",
-        autoclose: true,
-        todayBtn: true,
-        pickerPosition: "bottom-left",
-        language: "zh-CN"
-    });
-    $(".btn-info").click(function () {
-        var hopeTime = $("#datetimepicker").val();
-        alert(hopeTime);
-    });
-</script>
+<!--<script type="text/javascript">-->
+<!--$(".form_datetime").datetimepicker({-->
+<!--format: "yyyy-mm-dd hh:ii",-->
+<!--autoclose: true,-->
+<!--todayBtn: true,-->
+<!--pickerPosition: "bottom-left",-->
+<!--language: "zh-CN"-->
+<!--});-->
+<!--$(".btn-info").click(function () {-->
+<!--var hopeTime = $("#datetimepicker").val();-->
+<!--alert(hopeTime);-->
+<!--});-->
+<!--</script>-->

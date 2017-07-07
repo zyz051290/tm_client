@@ -2,52 +2,138 @@
     <div class="panel-heading" style="overflow: hidden;">
         <div onclick="history.go(-1)" class="pull-left"><i class="glyphicon glyphicon-chevron-left"></i> 返回</div>
         <label style="margin-left: 25%;">创建拉货</label>
-        <buttom onclick="location.href='#/purchaser/pullGoods'" style="float: right;padding: 1px 10px;"
-                class="btn btn-default">确定
-        </buttom>
     </div>
     <div style="width: 95%;margin: 10px 2.5%;">
         <table class="table table-bordered" style="text-align: center">
             <tr style="text-align: center">
                 <td>品类</td>
                 <td>件数</td>
-                <td>总重量(公斤)</td>
-                <td>净重(公斤)</td>
+                <td>总计</td>
+                <!--<td>净重(公斤)</td>-->
             </tr>
             <tr style="text-align: center">
                 <td><span style="padding: 6px 0;display: block;">报纸</span></td>
                 <td><input type="text" style="text-align: right;width: 50px;padding:3px 8px;margin:auto;"
-                           class="form-control"
-                           value="0"/></td>
+                           class="form-control"/></td>
                 <td>
-                    <input type="text" style="text-align: right;width: 50px;padding:3px 8px;display: inline-block"
-                           class="form-control"
-                           value="0"/>
+                    <input type="text"
+                           style="text-align: right;width: 50px;padding:3px 8px;display: inline-block;float: left;margin-left: 20%"
+                           class="form-control"/>
+                    <span style="display: block;line-height: 34px;float: left;margin-left: 8px;"> 公斤 </span>
                 </td>
-                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
+                <!--<td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>-->
             </tr>
             <tr style="text-align: center">
                 <td><span style="padding: 6px 0;display: block;">塑料瓶</span></td>
                 <td><input type="text" style="text-align: right;width: 50px;margin:auto;padding:3px 8px;"
-                           class="form-control"
-                           value="0"/></td>
+                           class="form-control"/></td>
                 <td>
-                    <input type="text" style="text-align: right;width: 50px;padding:3px 8px;display: inline-block"
-                           class="form-control"
-                           value="0"/>
+                    <input type="text"
+                           style="text-align: right;width: 50px;padding:3px 8px;display: inline-block;float: left;margin-left: 20%"
+                           class="form-control"/>
+                    <span style="display: block;line-height: 34px;float: left;margin-left: 8px;"> 个 </span>
                 </td>
-                <td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>
+                <!--<td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>-->
+            </tr>
+            <tr style="text-align: center">
+                <td><span style="padding: 6px 0;display: block;">塑料瓶</span></td>
+                <td><input type="text" style="text-align: right;width: 50px;margin:auto;padding:3px 8px;"
+                           class="form-control"/></td>
+                <td>
+                    <input type="text"
+                           style="text-align: right;width: 50px;padding:3px 8px;display: inline-block;float: left;margin-left: 20%"
+                           class="form-control"/>
+                    <span style="display: block;line-height: 34px;float: left;margin-left: 8px;"> 个 </span>
+                </td>
+                <!--<td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>-->
+            </tr>
+            <tr style="text-align: center">
+                <td><span style="padding: 6px 0;display: block;">冰箱</span></td>
+                <td><input type="text" style="text-align: right;width: 50px;margin:auto;padding:3px 8px;"
+                           class="form-control"/></td>
+                <td>
+                    <input type="text"
+                           style="text-align: right;width: 50px;padding:3px 8px;display: inline-block;float: left;margin-left: 20%"
+                           class="form-control"/>
+                    <span style="display: block;line-height: 34px;float: left;margin-left: 8px;"> 个 </span>
+                </td>
+                <!--<td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>-->
+            </tr>
+            <tr style="text-align: center">
+                <td><span style="padding: 6px 0;display: block;">电视</span></td>
+                <td><input type="text" style="text-align: right;width: 50px;margin:auto;padding:3px 8px;"
+                           class="form-control"/></td>
+                <td>
+                    <input type="text"
+                           style="text-align: right;width: 50px;padding:3px 8px;display: inline-block;float: left;margin-left: 20%"
+                           class="form-control"/>
+                    <span style="display: block;line-height: 34px;float: left;margin-left: 8px;"> 个 </span>
+                </td>
+                <!--<td><span class="total" style="padding: 6px 0;display: block;">0.00</span></td>-->
             </tr>
         </table>
+        <div style="text-align: center">
+            <button type="submit" style="margin-right: 40px;" class="btn btn-info" id="finish">完成</button>
+            <button type="button" data-toggle="modal" data-target="#myModal" id="cancel" class="btn btn-danger">取消
+            </button>
+        </div>
     </div>
 </div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" style="margin-top:180px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button id="goback" type="submit" class="btn btn-info">确定</button>
+                <button type="submit" data-dismiss="modal" class="btn btn-info">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script type="text/javascript">
+    $("#finish").click(function () {
+        /*
+         根据数量进行对比
+         */
+        $(".modal-footer").css('display', 'none');
+        $(".table tr").not(":eq(0)").each(function () {
+            var num1 = $(this).find("td:eq(1)>input").val();
+            var num2 = $(this).find("td:eq(2)>input").val();
+            if (num1 != 0 && num2 != 0) {
+                $("#myModal").css({'display': 'block'});
+                $(".modal-footer").css('display', 'block');
+                $("#myModal").addClass("in");
+                $(".modal-body").text("确定取消？");
+                $("#goback").click(function () {
+                    $("div").remove('.modal-backdrop');
+                    window.location.href = '#/purchaser/pullGoods';
+                });
+            } else {
+                $("#myModal").css('display', 'block');
+                $("#myModal").addClass("in");
+                $("#myModal").fadeToggle(2000);
+                $(".modal-body").text("请至少选择一项输入数量！");
+                return false;
+            }
+        })
+    });
+
+    $("#cancel").click(function () {
+        $("#myModal").css({'display': 'block'});
+        $(".modal-footer").css('display', 'block');
+        $("#myModal").addClass("in");
+        $(".modal-body").text("确定取消？");
+        $("#goback").click(function () {
+            window.location.href = '#/purchaser/pullGoods';
+        });
+    });
     /**
      * 未完待续
      * 从数据看获取不同计算类别(按公斤|个计算)并获取配置好的
      * 包装袋重量，计算净重
      */
-    var sum = 2;//单位kg
+    /* var sum = 2;//单位kg
     var per = 0.025;//单位kg
 
     $(".table tr").each(function () {
@@ -81,5 +167,5 @@
                 }
             }
         });
-    });
+     });*/
 </script>

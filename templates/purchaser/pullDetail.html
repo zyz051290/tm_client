@@ -2,7 +2,6 @@
     <div class="panel-heading" style="overflow: hidden;">
         <div onclick="history.go(-1)" class="pull-left"><i class="glyphicon glyphicon-chevron-left"></i> 返回</div>
         <label style="margin-left: 25%;">拉货详情</label>
-        <buttom id="update" style="float: right;padding: 1px 10px;" class="btn btn-default">修改</buttom>
     </div>
     <div style="width: 95%;margin: 10px 2.5%;height:20px;">
         <label style="float: left">201706061311</label>
@@ -14,25 +13,46 @@
                 <td>品类</td>
                 <td>件数</td>
                 <td>总计</td>
+                <td>回收量</td>
             </tr>
             <tr style="text-align: center">
                 <td><span style="padding: 6px 0;display: block;">报纸</span></td>
                 <td><span style="padding: 6px 0;display: block;">5</span></td>
                 <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
             </tr>
             <tr style="text-align: center">
                 <td><span style="padding: 6px 0;display: block;">报纸</span></td>
                 <td><span style="padding: 6px 0;display: block;">5</span></td>
+                <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
                 <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
                 </td>
             </tr>
         </table>
+        <div style="text-align: center;">
+            <button type="button" id="back_order" class="btn btn-info">补&nbsp;&nbsp;&nbsp;&nbsp;货</button>
+        </div>
     </div>
 </div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" style="margin-top:180px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button id="goback" type="submit" class="btn btn-info">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script type="text/javascript">
-    $("#update").click(function () {
-        if (confirm("确认修改？")) {
-            window.location.href = '#/purchaser/pullGoods';
-        }
+    $("#back_order").click(function () {
+        $("#myModal").css({'display': 'block'});
+        $(".modal-footer").css('display', 'block');
+        $("#myModal").addClass("in");
+        $(".modal-body").text("确定取消？");
+        $("#goback").click(function () {
+            window.location.href = '#/purchaser/createPull';
+        });
     });
 </script>

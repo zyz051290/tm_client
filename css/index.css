@@ -80,3 +80,7 @@ a:hover {
 .modal-open {
     padding: 0 !important;
 }
+
+.model {
+    padding-right: 0 !important;
+}

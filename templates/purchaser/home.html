@@ -67,8 +67,8 @@
     </div>
 </div>
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" style="margin-top:180px;">
-    <div class="modal-dialog">
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog" style="top:180px;">
         <div class="modal-content">
             <div style="text-align: center;font-size: 16px;font-weight: bold" class="modal-body"></div>
             <div class="modal-footer">
@@ -87,7 +87,7 @@
         $("#myModal").css('display', 'block');
         $(".modal-footer").css('display', 'block');
         $("#myModal").addClass("in");
-        $(".modal-body").text("确定退出？");
+        $(".modal-body").text("确定退出当前帐号？");
         $("#goback").click(function () {
             $("div").remove('.modal-backdrop');
             window.location.href = '#/login';
