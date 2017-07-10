@@ -9,9 +9,7 @@ $("#finish").click(function () {
             window.location.href = "#/purchaser/recList";
             return false;
         }
-        $("#myModal").css('display', 'block');
-        $("#myModal").addClass("in");
-        $("#myModal").fadeToggle(2000);
+        $("#myModal").modal("show");
         $(".modal-body").text("请至少选择一项输入数量！");
     })
 
@@ -20,11 +18,10 @@ $("#finish").click(function () {
  * 取消
  */
 $("#cancel").click(function () {
-    $("#myModal").css({'display': 'block'});
-    $(".modal-footer").css('display', 'block');
-    $("#myModal").addClass("in");
+    $("#myModal").modal("show");
     $(".modal-body").text("确定取消？");
     $("#goback").click(function () {
+        $("div").removeClass("modal-backdrop");
         window.location.href = '#/purchaser/home';
     });
 });

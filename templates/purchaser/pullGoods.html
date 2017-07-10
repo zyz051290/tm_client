@@ -13,16 +13,47 @@
         </div>
     </div>
     <div style="width: 95%;margin: 0 2.5%;">
+        <div style="width: 95%;margin: 10px 2.5%;height:20px;">
+            <label style="float: left">201706061311</label>
+            <label style="float: right">拉货件数3件</label>
+        </div>
+        <div style="width: 95%;margin: 10px 2.5%;">
+            <table class="table table-bordered" style="text-align: center">
+                <tr>
+                    <td>品类</td>
+                    <td>件数</td>
+                    <td>总计</td>
+                    <td>回收量</td>
+                </tr>
+                <tr style="text-align: center">
+                    <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                    <td><span style="padding: 6px 0;display: block;">5</span></td>
+                    <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                    <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                </tr>
+                <tr style="text-align: center">
+                    <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                    <td><span style="padding: 6px 0;display: block;">5</span></td>
+                    <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                    <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                    </td>
+                </tr>
+            </table>
+            <div style="text-align: center;">
+                <button type="button" id="back_order" class="btn btn-info">补&nbsp;&nbsp;&nbsp;&nbsp;货</button>
+            </div>
+        </div>
+        <div style="width: 95%;margin: 0 2.5%;display: none;">
         <table class="table table-bordered">
             <tr>
-                <td style="text-align: left"><input type="checkbox" value="cm">&nbsp;<strong>订单号</strong></td>
+                <td style="text-align: left">&nbsp;<strong>订单号</strong></td>
                 <td style="text-align: center"><strong>件数</strong></td>
                 <td style="text-align: center"><strong>时间</strong></td>
                 <td style="display: none"><strong>拉货人</strong></td>
                 <td style="display: none"><strong>验货人</strong></td>
             </tr>
             <tr style="text-align: center">
-                <td><input type="checkbox" value="cm"><a href="#/purchaser/pullDetail">201706061311</a></td>
+                <td><a href="#/purchaser/pullDetail">201706061311</a></td>
                 <td>5</td>
                 <td>2017-06-06 13:11</td>
                 <td style="display: none">潘金龙</td>
@@ -31,7 +62,7 @@
         </table>
     </div>
 
-    <div style="padding: 10px 2.5% 0;text-align: center;position: relative">
+        <div style="padding: 10px 2.5% 0;text-align: center;position: relative;display: none" class="driver_login">
         <div>
             <label class="col-xs-3 control-label"> 扫码 </label>
             <div class="col-xs-9">
@@ -60,8 +91,7 @@
     </div>
 
     <div class="panel-footer navbar-fixed-bottom mobile-width" style="background-color: #e8e8e8;padding-left:49px;">
-        <button onclick="location.href='#/purchaser/createPull'" class="btn pull_1 btn-info">创建拉货</button>
-        &nbsp;&nbsp;
+
         <button class="btn pull_1 btn-success">申请</button>
         &nbsp;&nbsp;
         <button class="btn pull_1 btn-danger">删除</button>
@@ -79,18 +109,21 @@
             if ($(this).val() == 'pull_0') {
                 $(".pull_1").show();
                 $(".pull_2").hide();
+                $(".driver_login").hide();
                 $(".table tr input").show();
                 $(".table tr").find('td:eq(3)').hide();
             }
             if ($(this).val() == 'pull_1') {
                 $(".pull_1").hide();
                 $(".pull_2").show();
+                $(".driver_login").show();
                 $(".table tr input").show();
                 $(".table tr").find('td:eq(3)').hide();
             }
             if ($(this).val() == 'pull_2') {
                 $(".pull_1").hide();
                 $(".pull_2").hide();
+                $(".driver_login").hide();
                 $(".table tr input").hide();
                 $(".table tr").find('td:eq(3)').show();
                 $(".table tr").find('td:eq(4)').hide();
@@ -98,6 +131,7 @@
             if ($(this).val() == 'pull_3') {
                 $(".pull_1").hide();
                 $(".pull_2").hide();
+                $(".driver_login").hide();
                 $(".table tr input").hide();
                 $(".table tr").find('td:eq(3)').hide();
                 $(".table tr").find('td:eq(4)').show();
@@ -105,6 +139,7 @@
             if ($(this).val() == 'pull_4') {
                 $(".pull_1").hide();
                 $(".pull_2").hide();
+                $(".driver_login").hide();
                 $(".table tr input").hide();
                 $(".table tr").find('td:eq(3)').hide();
                 $(".table tr").find('td:eq(4)').hide();

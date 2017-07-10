@@ -47,9 +47,7 @@
 </div>
 <script type="text/javascript">
     $("#back_order").click(function () {
-        $("#myModal").css({'display': 'block'});
-        $(".modal-footer").css('display', 'block');
-        $("#myModal").addClass("in");
+        $("#myModal").modal("show");
         $(".modal-body").text("确定取消？");
         $("#goback").click(function () {
             window.location.href = '#/purchaser/createPull';

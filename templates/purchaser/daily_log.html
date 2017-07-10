@@ -1,7 +1,7 @@
-<div class="panel panel-default tm-panel">
+<div class="panel panel-default tm-panel" style="overflow: auto">
     <div class="panel-heading" style="overflow: hidden">
-        <div onclick="history.go(-1)" class="text-left"
-             style="float: left;width:20%;line-height: 28px;cursor: pointer;"><i
+        <div onclick="history.go(-1)" class="col-xs-6"
+             style="float: left;width:23%;line-height: 28px;cursor: pointer;"><i
                 class="glyphicon glyphicon-chevron-left"></i>返回
         </div>
         <div style="width:60%;float: left;text-align: center;font-weight: bold;font-size: 12pt;line-height: 26px;">
@@ -9,79 +9,191 @@
         </div>
     </div>
     <div style="width: 95%;margin: 15px 2.5%;">
-        <div class="form-group col-xs-4" style="margin-right: 10px;">
-            <input type="text" id="datetimepicker1" class="form_datetime1 form-control"
-                   style="width: 100%;padding: 6px 3px;">
+        <div class="form-group col-xs-3" style="margin-left: 20px;">
+            <input type="text" id="datetimepicker1" placeholder="开始" class="form_datetime1 form-control"
+                   style="width: 100%;padding: 6px 10px;">
         </div>
-        <div class="form-group col-xs-4" style="margin-right: 10px;">
-            <input type="text" id="datetimepicker2" class="form_datetime2 form-control"
-                   style="width: 100%;padding: 6px 3px;">
+        <div class="form-group col-xs-1">~</div>
+        <div class="form-group col-xs-3" style="margin-right: 10px;">
+            <input type="text" id="datetimepicker2" placeholder="结束" class="form_datetime2 form-control"
+                   style="width: 100%;padding: 6px 10px;">
         </div>
-        <div class="form-group col-xs-2">
-            <button class="btn btn-default" type="button">查&nbsp;&nbsp;询</button>
+        <div class="form-group col-xs-3">
+            <button class="btn btn-default" id="search" type="button">查&nbsp;&nbsp;询</button>
         </div>
-        <!--<div style="text-align: center;">
-            <div class="form-group">
-                <div class="btn-group single-check" style="margin-top: 15px;">
-                    <button type="button"  value="1" class="btn btn-default">已验货</button>
-                    <button type="button"  value="2" class="btn btn-default">已验货</button>
-                    <button type="button"  value="3" class="btn btn-default">未验货</button>
-                </div>
-            </div>
-        </div>-->
         <div style="text-align: center;">
             <div class="form-group" id="types">
                 <div class="btn-group single-check" style="margin-top: 15px;">
-                    <button type="button" id="btn_1" value="1" class="btn btn-success active">已验货</button>
-                    <button type="button" id="btn_2" value="2" class="btn btn-default">未验货</button>
+                    <button type="button" id="btn_1" value="1" class="btn btn-success active">本日</button>
+                    <button type="button" id="btn_2" value="2" class="btn btn-default">本周</button>
+                    <button type="button" id="btn_3" value="3" class="btn btn-default">本月</button>
                 </div>
             </div>
         </div>
         <hr style="line-height: 5px;margin-top: 5px;border: none;border-top: 3px ridge black; width: 100%;">
-        <div style="position: fixed;bottom:0;left:0;width: 23.5%">
-            <input type="button" value="上拉显示更多" style="width: 100%">
-        </div>
     </div>
-    <div style="width: 95%;margin: 10px 2.5%;">
-        <p>回收总金额：30000元</p>
-        <p>新增用户：12个</p>
-        <p>服务用户：234个</p>
-        <table class="table table-bordered">
-            <tr style="text-align: center;">
-                <td>品类</td>
-                <td>数量</td>
-                <td>单价</td>
-                <td>金额</td>
-            </tr>
-            <tr style="text-align: center;">
-                <td>纸类</td>
-                <td>12</td>
-                <td>234.00</td>
-                <td>4324.88</td>
-            </tr>
-            <tr style="text-align: center;">
-                <td>纸类</td>
-                <td>12</td>
-                <td>234.00</td>
-                <td>4324.88</td>
-            </tr>
-        </table>
+    <div style="width: 95%;margin: 10px 2.5%;min-height: 130px;">
+        <div class="col-xs-6">呼叫次数：<span>15</span>次</div>
+        <div class="col-xs-6">回收次数：<span>11</span>次</div>
+        <div class="col-xs-6">绿色交易：<span>110</span>元</div>
+        <div class="col-xs-6">好评数量：<span>110</span>个</div>
+        <div class="col-xs-6">差评数量：<span>110</span>个</div>
+        <div class="col-xs-6">新注册：<span>110</span>人</div>
+        <div class="col-xs-6">验收量：<span>110</span>公斤</div>
+        <div class="col-xs-6">回收量：<span>110</span>公斤</div>
+        <div class="col-xs-6">回收金额：<span>110</span>元</div>
+        <div class="col-xs-6">挂起次数：<span>110</span>次</div>
+        <div class="col-xs-6">撤销次数：<span>110</span>次</div>
+    </div>
+    <div style="width: 100%;padding: 0px 5% 20px;min-height:220px;">
+        <div class="part">
+            <h4 class="panel-title">
+                <span>超时回复2次</span>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <span class="glyphicon glyphicon-chevron-down" style="float: right"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+            <table class="table table-striped" style="margin-bottom: 0;">
+                <tr style="text-align: center;">
+                    <td>单号</td>
+                    <td>呼叫时间</td>
+                    <td>回复时间</td>
+                    <td>超时</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>1234123456</td>
+                    <td>12:21</td>
+                    <td>12:35</td>
+                    <td>10</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>4984587645</td>
+                    <td>12:49</td>
+                    <td>13:11</td>
+                    <td>18</td>
+                </tr>
+            </table>
+        </div>
+        <div class="part">
+            <h4 class="panel-title">
+                <span>超时完成2次</span>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    <span class="glyphicon glyphicon-chevron-down" style="float: right"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <table class="table table-striped" style="margin-bottom: 0;">
+                <tr style="text-align: center;">
+                    <td>单号</td>
+                    <td>呼叫时间</td>
+                    <td>完成时间</td>
+                    <td>超时</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>1234123456</td>
+                    <td>12:21</td>
+                    <td>12:35</td>
+                    <td>10</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>4984587645</td>
+                    <td>12:49</td>
+                    <td>13:11</td>
+                    <td>18</td>
+                </tr>
+            </table>
+        </div>
+        <div class="part">
+            <h4 class="panel-title">
+                <span>验收明细</span>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                    <span class="glyphicon glyphicon-chevron-down" style="float: right"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+            <table class="table table-striped" style="margin-bottom: 0;">
+                <tr style="text-align: center;">
+                    <td>品类</td>
+                    <td>数量</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>纸类</td>
+                    <td>12</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>纸类</td>
+                    <td>12</td>
+                </tr>
+            </table>
+        </div>
+        <div class="part">
+            <h4 class="panel-title">
+                <span>回收明细</span>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                    <span class="glyphicon glyphicon-chevron-down" style="float: right"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse">
+            <table class="table table-striped" style="margin-bottom: 0;">
+                <tr style="text-align: center;">
+                    <td>品类</td>
+                    <td>数量</td>
+                    <td>单价</td>
+                    <td>金额</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>纸类</td>
+                    <td>12</td>
+                    <td>234.00</td>
+                    <td>4324.88</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>纸类</td>
+                    <td>12</td>
+                    <td>234.00</td>
+                    <td>4324.88</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="purchaser/daily_log.html.js"></script>
 <script type="text/javascript">
+    $(function () {
+        $('#collapseFour').collapse('hide')
+    });
+    $(function () {
+        $('#collapseTwo').collapse('hide')
+    });
+    $(function () {
+        $('#collapseThree').collapse('hide')
+    });
+    $(function () {
+        $('#collapseOne').collapse('hide')
+    });
+
+
     $("#datetimepicker1").datetimepicker({
-        format: "mm-dd hh:ii",
+        format: "mm/dd",
         autoclose: true,
         todayBtn: true,
+        minView: "month",
         pickerPosition: "bottom-right",
         language: "zh-CN"
     });
     $("#datetimepicker2").datetimepicker({
-        format: "mm-dd hh:ii",
+        format: "mm/dd",
         autoclose: true,
         todayBtn: true,
+        minView: "month",
         pickerPosition: "bottom-right",
         language: "zh-CN"
     });
+
+
 </script>

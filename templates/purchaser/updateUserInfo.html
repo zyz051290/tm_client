@@ -4,31 +4,80 @@
         <label style="margin-left: 25%;">修改用户信息</label>
     </div>
     <div style="padding: 10px;">
-        <div class="form-group">
-            <label style="font-size: 16px">条形码：</label><br>
-            <div class="col-xs-8">
-                <input type="text" class="form-control"/>
+        <form id="update">
+            <div class="form-group">
+                <label style="font-size: 16px;margin-left: 10px;">条形码：</label><br>
+                <div class="col-xs-7">
+                    <input type="text" id="barcode" placeholder="请扫描条形码..." class="form-control"/>
+                </div>
+                <div style="float: right;margin-right: 10px;">
+                    <button class="btn btn-info btn-ms">扫描条形码</button>
+                </div>
             </div>
-            <div>
-                <button class="btn btn-default btn-ms">扫描条形码</button>
+
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <label style="font-size: 16px;">用户地址：</label><br>
+                    <input type="text" id="userAddr" class="form-control" placeholder="请点击选择地址..."
+                           onclick="location.href='#/purchaser/updateAddress'"/>
+                </div>
+                <br><br>
+                <div class="col-xs-12">
+                    <label style="vertical-align: top;font-size:16px;text-align: right;margin-top: 15px;">其他：</label><br>
+                    <textarea cols="34" class="form-control col-sm-2 " style="resize: none" rows="5"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-xs-12">
-                <label style="font-size: 16px;">用户地址：</label><br>
-                <input type="text" class="form-control" onclick="location.href='#/purchaser/updateAddress'"/>
+            <div style="text-align: center;">
+                <button class="btn btn-info btn-ms" id="save" style="width: 150px;height: 40px;margin-top: 50px;">保存
+                </button>
             </div>
-            <br><br>
-            <div class="col-xs-12">
-                <label style="vertical-align: top;font-size:16px;text-align: right;margin-top: 15px;">其他：</label><br>
-                <textarea cols="34" class="form-control col-sm-2 " style="resize: none" rows="5"></textarea>
-            </div>
-        </div>
-        <div style="text-align: center;">
-            <button class="btn btn-info btn-ms" style="width: 150px;height: 40px;margin-top: 50px;">保存</button>
-        </div>
+        </form>
     </div>
 </div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" style="margin-top:180px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div style="text-align: center;font-size: 16px;font-weight: bold" class="modal-body"></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script type="text/javascript">
+    $("#save").click(function () {
+        /**
+         * 备注，开发室删除
+         */
+        $("#myModal").css('display', 'block');
+        $("#myModal").addClass("in");
+        $("#myModal").fadeToggle(3000);
+        $(".modal-body").text("修改成功！");
+    })
 
+
+    $(function () {
+        $("#reg").validate({
+            focusInvalid: true,
+            onkeyup: false,
+            submitHandler: function (form) {
+                window.location.href = '#/purchaser/home'
+            },
+            rules: {
+                phonenum: {
+                    required: true,
+                    isMobile: true
+                },
+                verify: {
+                    required: true
+                }
+            },
+            messages: {
+                phonenum: {
+                    required: "<span style=\"color:red\">手机号不能为空</span>"
+                },
+                verify: {
+                    required: "<span style=\"color:red\">请填写验证码</span>"
+                }
+            }
+        });
+    });
 </script>

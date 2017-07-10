@@ -34,22 +34,16 @@
         /**
          * 备注，开发室删除
          */
-        $("#myModal").css('display', 'block');
-        $("#myModal").addClass("in");
-        $("#myModal").fadeToggle(3000);
+        $("#myModal").modal("show");
         $(".modal-body").text("开始调用摄像头扫码！");
     })
     $("#bind").click(function () {
         var code = $("#bindcode").val();
         if (code == "") {
-            $("#myModal").css('display', 'block');
-            $("#myModal").addClass("in");
-            $("#myModal").fadeToggle(3000);
+            $("#myModal").modal("show");
             $(".modal-body").text("请先扫描条形码进行绑定！");
         } else {
-            $("#myModal").css('display', 'block');
-            $("#myModal").addClass("in");
-            //$("#myModal").fadeToggle(3000);
+            $("#myModal").modal("show");
             $(".modal-body").text("条形码绑定成功！");
             setTimeout("window.location.href = '#/purchaser/home'", 1000);
         }

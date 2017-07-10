@@ -4,13 +4,13 @@
             <i class="glyphicon glyphicon-chevron-left"></i> 返回
         </div>
         <div style="width:60%;float: left;text-align: center;font-weight: bold;font-size: 12pt;line-height: 26px;">
-            回收管理
+            兑换管理
         </div>
     </div>
     <div class="form-group" style="text-align: center;margin-top: 15px;" id="types">
         <div class="btn-group single-check">
-            <button type="button" id="btn_1" value="1" class="btn btn-success active">未回复</button>
-            <button type="button" id="btn_2" value="2" class="btn btn-default">未完成</button>
+            <button type="button" id="btn_1" value="1" class="btn btn-success active">未查看</button>
+            <button type="button" id="btn_2" value="2" class="btn btn-default">未送货</button>
             <button type="button" id="btn_3" value="3" class="btn btn-default">已完成</button>
         </div>
     </div>
@@ -19,23 +19,25 @@
             <tr>
                 <td style="padding: 5px 5px 5px;vertical-align: middle;">1</td>
                 <td colspan="2">
-                    <dt>
-                        <a href="javascript:void(0)" onclick="selectRadio(1)">
-                            <span>花市北里西区516号5单元501</span>
-                        </a>&nbsp;
-                        <span>7-29 12:00</span>
-                    </dt>
-                    <dt style="float: left;position: relative">
-                        <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"
-                               value="12"/>
-                        <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;时&nbsp;</span>
-                        <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"
-                               value="20"/>
-                        <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;分&nbsp;</span>
-                    </dt>
-                    <dd style="text-align: right;float: right;position: relative">
-                        <button type="button" class="btn btn-default">回复</button>
-                    </dt>
+                    <form class="fast_reply">
+                        <dt>
+                            <a href="javascript:void(0)" onclick="selectRadio(1)">
+                                <span>花市北里西区516号5单元501</span>
+                            </a>&nbsp;
+                            <span>7-29 12:00</span>
+                        </dt>
+                        <dt style="float: left;position: relative">
+                            <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"
+                                   value="12"/>
+                            <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;时&nbsp;</span>
+                            <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"
+                                   value="20"/>
+                            <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;分&nbsp;</span>
+                        </dt>
+                        <dd style="text-align: right;float: right;position: relative">
+                            <button type="submit" class="btn reply btn-default">回复</button>
+                        </dt>
+                    </form>
                 </td>
             </tr>
             <tr>
@@ -45,7 +47,7 @@
                         <a href="javascript:void(0)" onclick="selectRadio(1)">
                             <span>花市北里西区516号5单元501</span>
                         </a>&nbsp;
-                        <span>7-29 12:00</span>
+                        <span>7-29 12:10</span>
                     </dt>
                     <dt style="float: left;position: relative">
                         <input type="text" style="text-align: right;width: 45px;float: left;" class="form-control"
@@ -56,7 +58,7 @@
                         <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;分&nbsp;</span>
                     </dt>
                     <dd style="text-align: right;float: right;position: relative">
-                        <button type="button" class="btn btn-default">回复</button>
+                        <button type="submit" class="btn reply btn-default">回复</button>
                     </dt>
                 </td>
             </tr>
@@ -69,7 +71,7 @@
                         <a href="javascript:void(0)" onclick="selectRadio(2)">
                             <span>花市北里西区516号5单元501</span>
                         </a>&nbsp;
-                        <span>7-29 12:00</span>
+                        <span>7-29 12:05</span>
                     </dt>
                     <dl style="margin-bottom: 0;">
                         <dd style="float: left;position: relative">
@@ -77,7 +79,7 @@
                             <span style="display:block">13901234567</span>
                         </dd>
                         <dd style="text-align: right;float: right;position: relative">
-                            <button type="button" class="btn btn-default">回复</button>
+                            <button type="submit" class="btn reply btn-default">回复</button>
                         </dd>
                     </dl>
                 </td>
@@ -89,7 +91,7 @@
                         <a href="javascript:void(0)" onclick="selectRadio(2)">
                             <span>花市北里西区516号5单元501</span>
                         </a>&nbsp;
-                        <span>7-29 12:00</span>
+                        <span>7-29 12:07</span>
                     </dt>
                     <dl style="margin-bottom: 0;">
                         <dd style="float: left;position: relative">
@@ -97,7 +99,7 @@
                             <span style="display:block">13901234567</span>
                         </dd>
                         <dd style="text-align: right;float: right;position: relative">
-                            <button type="button" class="btn btn-default">回复</button>
+                            <button type="submit" class="btn reply btn-default">回复</button>
                         </dd>
                     </dl>
                 </td>
@@ -133,9 +135,28 @@
         </table>
     </div>
 </div>
-<script type="text/javascript" src="../js/bootstrap.js"></script>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog" style="top:180px;">
+        <div class="modal-content">
+            <div style="text-align: center;font-size: 16px;font-weight: bold" class="modal-body"></div>
+            <div class="modal-footer">
+                <button id="goback" type="submit" class="btn btn-info">确定</button>
+                <button id="cancel" type="submit" data-dismiss="modal" class="btn btn-info">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script type="text/javascript" src="purchaser/service_reminder.html.js"></script>
 
 <script type="text/javascript">
-
+    $(".reply").click(function () {
+        $("#myModal").modal("show");
+        $(".modal-body").text("确定回复当前时间？");
+        $("#goback").click(function () {
+            $("div").remove('.modal-backdrop');
+            $(".modal-body").text("回复成功！");
+            $("#myModal").modal("hide");
+        });
+    });
 </script>

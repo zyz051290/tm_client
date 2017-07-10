@@ -84,3 +84,9 @@ a:hover {
 .model {
     padding-right: 0 !important;
 }
+
+.part {
+    padding: 3px 15px 3px 15px;
+    background-color: #e0e0e0;
+    margin-top: 10px;
+}

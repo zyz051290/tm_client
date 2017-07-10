@@ -70,9 +70,7 @@
                 window.location.href = '#/purchaser/recDetail';
             }
         }else{
-            $("#myModal").css('display', 'block');
-            $("#myModal").addClass("in");
-            $("#myModal").fadeToggle(3000);
+            $("#myModal").modal("show");
             $(".modal-body").text("请选择一种支付方式！");
         }
     });

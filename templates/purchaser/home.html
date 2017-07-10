@@ -1,7 +1,7 @@
 <div class="panel panel-default tm-panel">
     <div class="panel-heading" style="overflow: hidden">
         欢迎： <b>小明</b>
-        <span class="pull-right logout" data-toggle="modal" data-target="#myModal">退出</span>
+        <span class="pull-right logout">退出</span>
     </div>
     <div class="panel-body" style="padding: 5px 15px 0">
         <div style="width: 120px;height: 45px;margin: 0 auto;">
@@ -47,7 +47,7 @@
                     <h4>工作统计</h4>
                 </div>
             </div>
-            <div href="#/purchaser/getUserInfo" class="grid-col lcm col-xs-5"
+            <div href="#/purchaser/convertManage" class="grid-col lcm col-xs-5"
                  style="margin:10px 0 10px 18px;border: 1px solid #999;">
                 <div style="padding:15px 8px;text-align: center">
                     <i class="glyphicon glyphicon-user" style="font-size: 18px"></i>
@@ -84,12 +84,11 @@
         window.location.href = url;
     });
     $(".logout").click(function () {
-        $("#myModal").css('display', 'block');
-        $(".modal-footer").css('display', 'block');
-        $("#myModal").addClass("in");
+        $("#myModal").modal("show");
         $(".modal-body").text("确定退出当前帐号？");
         $("#goback").click(function () {
             $("div").remove('.modal-backdrop');
+            $("#myModal").modal("hide");
             window.location.href = '#/login';
         });
 //        $("#cancel").click(function () {

@@ -100,21 +100,20 @@
         $(".table tr").not(":eq(0)").each(function () {
             var num1 = $(this).find("td:eq(1)>input").val();
             var num2 = $(this).find("td:eq(2)>input").val();
+            console.log("num1=" + num1 + "  num2=" + num2);
             if (num1 != 0 && num2 != 0) {
+
                 $("#myModal").css({'display': 'block'});
                 $(".modal-footer").css('display', 'block');
                 $("#myModal").addClass("in");
-                $(".modal-body").text("确定取消？");
+                $(".modal-body").text("完成创建？");
                 $("#goback").click(function () {
                     $("div").remove('.modal-backdrop');
                     window.location.href = '#/purchaser/pullGoods';
                 });
             } else {
-                $("#myModal").css('display', 'block');
-                $("#myModal").addClass("in");
-                $("#myModal").fadeToggle(2000);
+                $("#myModal").modal("show");
                 $(".modal-body").text("请至少选择一项输入数量！");
-                return false;
             }
         })
     });

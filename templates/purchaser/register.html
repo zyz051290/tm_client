@@ -37,6 +37,14 @@
         </form>
     </div>
 </div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" style="margin-top:180px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div style="text-align: center;font-size: 16px;font-weight: bold" class="modal-body"></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script type="text/javascript">
     jQuery.validator.addMethod("isMobile", function (value, element) {
         var length = value.length;
@@ -52,7 +60,8 @@
                 if ($("#userType .btn").hasClass('active')) {
                     window.location.href = '#/purchaser/register_address'
                 } else {
-                    alert("请选一种用户类型");
+                    $("#myModal").modal("show");
+                    $(".modal-body").text("请选一种用户类型！");
                 }
 
             },
