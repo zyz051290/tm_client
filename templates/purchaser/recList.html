@@ -14,35 +14,45 @@
                 </tr>
                 <tr style="text-align: center">
                     <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
-                    <td style="padding: 14px 0;">11111</td>
-                    <td><span style="padding: 6px 0;display: block;">111111</span></td>
-                    <td><span style="padding: 6px 0;display: block;">999999</span></td>
+                    <td style="padding: 14px 0;">100</td>
+                    <td><span style="padding: 6px 0;display: block;">0.04</span></td>
+                    <td><span style="padding: 6px 0;display: block;">4</span></td>
                 </tr>
                 <tr style="text-align: center">
                     <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
-                    <td style="padding: 14px 0;">11111</td>
-                    <td><span style="padding: 6px 0;display: block;">999999</span></td>
-                    <td><span style="padding: 6px 0;display: block;">999999</span></td>
+                    <td style="padding: 14px 0;">100</td>
+                    <td><span style="padding: 6px 0;display: block;">0.04</span></td>
+                    <td><span style="padding: 6px 0;display: block;">4</span></td>
                 </tr>
                 <tr style="text-align: center">
                     <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
-                    <td style="padding: 14px 0;">11111</td>
-                    <td><span style="padding: 6px 0;display: block;">999999</span></td>
-                    <td><span style="padding: 6px 0;display: block;">9999999</span></td>
+                    <td style="padding: 14px 0;">100</td>
+                    <td><span style="padding: 6px 0;display: block;">0.04</span></td>
+                    <td><span style="padding: 6px 0;display: block;">4</span></td>
                 </tr>
             </table>
             <label>结算方式：</label>
             <div class="form-group" id="payMethod" style="padding: 10px 20%;text-align: center">
                 <div class="btn-group single-check" role="group">
-                    <button type="button" id="virtual"  value="virtual" class="btn btn-default">虚拟币</button>
+                    <button type="button" id="virtual" value="virtual" class="btn btn-default">存&nbsp;&nbsp;&nbsp;&nbsp;款</button>
                     <button type="button" id="cash" value="cash" class="btn btn-default">现&nbsp;&nbsp;&nbsp;&nbsp;金</button>
                 </div>
             </div>
         </div>
         <div id="prev"   style="text-align: center;margin-top: 30px">
-            <button type="button" id="finish"  class="btn btn-info">完成</button>
+            <button type="button" id="finish" class="btn btn-info">完成</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" id="update" class="btn btn-info">修改</button>
         </div>
     </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" style="margin-top:180px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div style="text-align: center;font-size: 16px;font-weight: bold" class="modal-body"></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
 </div>
 <script type="text/javascript" src="purchaser/recycle.html.js"></script>
 <script type="text/javascript">
@@ -60,7 +70,21 @@
                 window.location.href = '#/purchaser/recDetail';
             }
         }else{
-            alert("请选一种付款方式");
+            $("#myModal").css('display', 'block');
+            $("#myModal").addClass("in");
+            $("#myModal").fadeToggle(3000);
+            $(".modal-body").text("请选择一种支付方式！");
         }
+    });
+    $("#update").click(function () {
+        $(".table tr").each(function () {
+            var unit = $(this).find("td:eq(2)").text();
+            var totle = $(this).find("td:eq(3)");
+            var val = $(this).find("td:eq(1)").text();
+            $(this).find("td:eq(1)").html('<input type="text" class="form-control" value="' + val + '" size="1" />').css('padding-top', '8px').find('input').focus().blur(function () {
+                val = $(this).val();
+                totle.html('<span style="padding: 6px 0;display: block;">' + val * unit + '</span>');
+            });
+        });
     });
 </script>

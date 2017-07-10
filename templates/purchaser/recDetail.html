@@ -3,7 +3,7 @@
         <div onclick="history.go(-1)" class="pull-left"> <i class="glyphicon glyphicon-chevron-left"></i> 回收订单明细 </div>
     </div>
     <div class="panel-body">
-        <label style="font-size: 18px;margin-left: 15px;">虚拟币结算明细</label>
+        <label style="font-size: 16px;margin-left: 15px;">存款结算明细</label>
         <table class="table table-bordered" style="width: 80%;margin: 0 auto">
             <tr>
                 <td >订单编号：</td>
@@ -18,37 +18,39 @@
                 <td>xiaomain</td>
             </tr>
             <tr>
-                <td >原有虚拟币：</td>
+                <td>原有存款：</td>
                 <td>1100</td>
             </tr>
             <tr>
-                <td >原有积分：</td>
+                <td>原有绿猫币：</td>
                 <td>1100</td>
             </tr>
             <tr>
-                <td >新增虚拟币：</td>
+                <td>新增存款：</td>
                 <td>11</td>
             </tr>
             <tr>
-                <td >新增积分：</td>
+                <td>新增绿猫币：</td>
                 <td>11</td>
             </tr>
             <tr>
-                <td >累计虚拟币：</td>
+                <td>累计存款：</td>
                 <td>1111</td>
             </tr>
             <tr>
-                <td >累计积分：</td>
+                <td>累计绿猫币：</td>
                 <td>1111</td>
             </tr>
         </table>
         <div style="text-align: center;margin-top: 40px">
-            <button type="button" onclick="location.href='#/purchaser/home'" class="btn btn-info">确定</button>
+            <button type="button" onclick="location.href='#/purchaser/home'" class="btn btn-info">完&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;成</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" onclick="location.href='#/purchaser/recCategory'" class="btn btn-info">还有剩余</button>
         </div>
         <div class="modal" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <label style="font-size: 18px;margin: 10px 0 0 15px;display: block">回收订单明细</label>
+                    <label style="font-size: 16px;margin: 10px 0 0 15px;display: block">回收订单明细</label>
                     <table class="table table-striped">
                         <tr style="background-color:#444;color: #fff;">
                             <th style="text-align: center">品类</th>
@@ -57,19 +59,19 @@
                             <th style="text-align: center">小计</th>
                         </tr>
                         <tr style="text-align: center">
-                            <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                            <td><span style="padding: 6px 0;display: block;text-align: center">饮料瓶</span></td>
                             <td><span style="padding: 6px 0;display: block;">11111</span></td>
                             <td><span style="padding: 6px 0;display: block;">111111</span></td>
                             <td><span style="padding: 6px 0;display: block;">999999</span></td>
                         </tr>
                         <tr style="text-align: center">
-                            <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                            <td><span style="padding: 6px 0;display: block;text-align: center">饮料瓶</span></td>
                             <td>11111</td>
                             <td><span style="padding: 6px 0;display: block;">999999</span></td>
                             <td><span style="padding: 6px 0;display: block;">999999</span></td>
                         </tr>
                         <tr style="text-align: center">
-                            <td><span style="padding: 6px 0;display: block;">饮料瓶</span></td>
+                            <td><span style="padding: 6px 0;display: block;text-align: center">饮料瓶</span></td>
                             <td><span style="padding: 6px 0;display: block;">11111</span></td>
                             <td><span style="padding: 6px 0;display: block;">999999</span></td>
                             <td><span style="padding: 6px 0;display: block;">9999999</span></td>
@@ -83,8 +85,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(".table tr").each(function () {
-        $(this).find('td:first').css('text-align','right');
-    });
-</script>

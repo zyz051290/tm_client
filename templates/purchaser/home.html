@@ -1,53 +1,101 @@
 <div class="panel panel-default tm-panel">
     <div class="panel-heading" style="overflow: hidden">
         欢迎： <b>小明</b>
-        <a class="pull-right logout" href="#/login">退出</a>
+        <span class="pull-right logout" data-toggle="modal" data-target="#myModal">退出</span>
     </div>
-    <div class="panel-body">
-
-        <div class="container-fuild home-gridview">
-            <div class="row">
-                <div href="#/purchaser/recycle" class="grid-col col-xs-5 col-xs-offset-1">
-                    <br/>
-                    <i class="glyphicon glyphicon-yen"></i>
+    <div class="panel-body" style="padding: 5px 15px 0">
+        <div style="width: 120px;height: 45px;margin: 0 auto;">
+            <img src="/tm_client/images/logo.jpg" style="width: 120px;height: 45px" alt="logo">
+        </div>
+        <div style="margin-top: 10px;">
+            <div href="#/purchaser/recycle" class="grid-col grid-col lcm col-xs-5 "
+                 style="margin:10px 0 10px 18px;border: 1px solid #999;">
+                <div style="padding:15px 8px;text-align: center">
+                    <i class="glyphicon glyphicon-yen" style="font-size: 18px"></i>
                     <h4>个人回收</h4>
                 </div>
-                <div href="#/purchaser/register" class="grid-col col-xs-5">
-                    <br/>
-                    <i class="glyphicon glyphicon-edit"></i>
+            </div>
+            <div href="#/purchaser/register" class="grid-col lcm col-xs-5"
+                 style="margin:10px 0 10px 18px;border: 1px solid #999;">
+                <div style="padding:15px 8px;text-align: center">
+                    <i class="glyphicon glyphicon-edit" style="font-size: 18px"></i>
                     <h4>用户注册</h4>
                 </div>
+            </div>
 
-                <div href="#/purchaser/pullGoods" class="grid-col col-xs-5 col-xs-offset-1">
-                    <br/>
-                    <i class="glyphicon glyphicon-shopping-cart"></i>
-                    <h4>拉货提醒</h4>
+            <div href="#/purchaser/pullGoods" class="grid-col lcm col-xs-5 "
+                 style="margin:10px 0 10px 18px;border: 1px solid #999;">
+                <div style="padding:15px 8px;text-align: center">
+                    <i class="glyphicon glyphicon-shopping-cart" style="font-size: 18px"></i>
+                    <h4>拉货管理</h4>
                 </div>
-                <div href="#/purchaser/service_reminder" class="grid-col col-xs-5">
-                    <br/>
-                    <i class="glyphicon glyphicon-envelope"></i>
-                    <h4>客服提醒</h4>
-                    <span class="tm-badge badge pull-right">4</span>
+            </div>
+            <div href="#/purchaser/service_reminder" class="grid-col lcm col-xs-5"
+                 style="margin:10px 0 10px 18px;border: 1px solid #999;">
+                <div style="padding:15px 8px;text-align: center">
+                    <i class="glyphicon glyphicon-envelope" style="font-size: 18px"></i>
+                    <h4>回收管理</h4>
+                    <span class="tm-badge badge pull-right">未查看9</span>
+                    <span class="tm-badge_bottom badge pull-right">已回复9</span>
                 </div>
+            </div>
 
-                <div href="#/purchaser/daily_log" class="grid-col col-xs-5 col-xs-offset-1">
-                    <br/>
-                    <i class="glyphicon glyphicon-list-alt"></i>
-                    <h4>工作日志</h4>
+            <div href="#/purchaser/daily_log" class="grid-col lcm col-xs-5 "
+                 style="margin:10px 0 10px 18px;border: 1px solid #999;">
+                <div style="padding:15px 8px;text-align: center">
+                    <i class="glyphicon glyphicon-list-alt" style="font-size: 18px"></i>
+                    <h4>工作统计</h4>
                 </div>
-                <div href="#/purchaser/getUserInfo" class="grid-col col-xs-5">
-                    <br/>
-                    <i class="glyphicon glyphicon-user"></i>
+            </div>
+            <div href="#/purchaser/getUserInfo" class="grid-col lcm col-xs-5"
+                 style="margin:10px 0 10px 18px;border: 1px solid #999;">
+                <div style="padding:15px 8px;text-align: center">
+                    <i class="glyphicon glyphicon-user" style="font-size: 18px"></i>
+                    <h4>兑换管理</h4>
+                    <span class="tm-badge badge pull-right">未查看9</span>
+                    <span class="tm-badge_bottom badge pull-right">未送货9</span>
+                </div>
+            </div>
+            <div href="#/purchaser/getUserInfo" class="grid-col lcm col-xs-5"
+                 style="margin:10px 0 10px 18px;border: 1px solid #999;">
+                <div style="padding:15px 8px;text-align: center">
+                    <i class="glyphicon glyphicon-user" style="font-size: 18px"></i>
                     <h4>用户修改</h4>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog" style="top:180px;">
+        <div class="modal-content">
+            <div style="text-align: center;font-size: 16px;font-weight: bold" class="modal-body"></div>
+            <div class="modal-footer">
+                <button id="goback" type="submit" class="btn btn-info">确定</button>
+                <button id="cancel" type="submit" data-dismiss="modal" class="btn btn-info">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script type="text/javascript">
     $('.grid-col').click(function(){
         var url = $(this).attr('href');
         window.location.href = url;
+    });
+    $(".logout").click(function () {
+        $("#myModal").css('display', 'block');
+        $(".modal-footer").css('display', 'block');
+        $("#myModal").addClass("in");
+        $(".modal-body").text("确定退出当前帐号？");
+        $("#goback").click(function () {
+            $("div").remove('.modal-backdrop');
+            window.location.href = '#/login';
+        });
+//        $("#cancel").click(function () {
+//            $("#myModal").css({'display': 'none'});
+//            $(".modal-footer").css('display', 'none');
+//            $("#myModal").removeClass("in");
+//        });
     });
 </script>

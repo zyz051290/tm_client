@@ -27,7 +27,12 @@ $('.btn-group>.btn').click(function() {
         }
     }
 });
+$("#rset").css('display', 'none');
+$("#rset").click(function () {
+    parent.location.reload();
+});
 $("#menu .btn").click(function () {
+    $("#rset").css({'display': 'inline-block', 'margin-left': '25px'});
     if($("#fun_1").hasClass('active')){
         var a = $("#fun_1").val();
         $(".fun_1").show();
