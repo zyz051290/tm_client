@@ -1,148 +1,345 @@
 <div class="panel panel-default tm-panel">
-    <div class="panel-heading" style="overflow: hidden">
-        <div onclick="history.go(-1)" class="pull-left"><i class="glyphicon glyphicon-chevron-left"></i> 返回</div>
+    <div class="panel-heading">
+        <div onclick="location.href='#/purchaser/home'" class="pull-left"><i
+                class="glyphicon glyphicon-chevron-left"></i> 返回
+        </div>
         <label style="margin-left: 25%;">拉货管理</label>
     </div>
-    <div class="form-group" id="pullType" style="text-align: center;margin-top: 15px">
+    <div class="form-group" id="pullType" style="text-align: center;width: 95%;margin: 15px 2.5%;">
         <div class="btn-group single-check" role="group">
-            <button type="button" id="pull_0" value="pull_0" class="btn btn-success active">拉货</button>
-            <button type="button" id="pull_1" value="pull_1" class="btn btn-default">待拉货</button>
-            <button type="button" id="pull_2" value="pull_2" class="btn btn-default">已拉货</button>
-            <button type="button" id="pull_3" value="pull_3" class="btn btn-default">已验收</button>
-            <button type="button" id="pull_4" value="pull_4" class="btn btn-default">挂起</button>
+            <button type="button" id="pull_0" value="pull_0" class="btn btn-success btn-sm active">拉货</button>
+            <button type="button" id="pull_1" value="pull_1" class="btn btn-default btn-sm">待拉货</button>
+            <button type="button" id="pull_2" value="pull_2" class="btn btn-default btn-sm">已拉货</button>
+            <button type="button" id="pull_3" value="pull_3" class="btn btn-default btn-sm">已验收</button>
+            <button type="button" id="pull_4" value="pull_4" class="btn btn-default btn-sm">挂起</button>
         </div>
     </div>
-    <div style="width: 95%;margin: 0 2.5%;">
-        <div style="width: 95%;margin: 10px 2.5%;height:20px;">
-            <label style="float: left">201706061311</label>
+    <div style="width: 95%;margin: 0 2.5% 40px;">
+        <div class="unfinish" style="width: 95%;margin: 10px 2.5%;height:50px;">
+            <label style="float: left">
+                单号：
+                <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal">201706061311</a>
+            </label>
             <label style="float: right">拉货件数3件</label>
+            <label style="float: left">创建时间：2017-07-11</label>
         </div>
-        <div style="width: 95%;margin: 10px 2.5%;">
-            <table class="table table-bordered" style="text-align: center">
+        <!-- 未拉货详细显示框 -->
+        <div class="modal" id="myModal" style="top: 100px;display: none">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <label style="font-size: 16px;margin: 10px 0 0 15px;display: block">回收订单明细</label>
+                    <table class="table table-bordered" style="text-align: center">
+                        <tr>
+                            <td>品类</td>
+                            <td>件数</td>
+                            <td>总计</td>
+                            <td>回收量</td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- 已拉货详细显示框 -->
+        <div class="modal" id="myModal1" style="margin-top: 50px;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <label id="pickup" style="font-size: 16px;margin: 10px 0 0 15px;display: block">已拉货明细</label>
+                    <label id="checkout" style="font-size: 16px;margin: 10px 0 0 15px;display: block">已验收明细</label>
+
+                </div>
+            </div>
+        </div>
+        <div class="btn_group" style="text-align: center;position: relative">
+            <button onclick="location.href='#/purchaser/createPull'" class="btn pull_1 btn-info">创建拉货</button>&nbsp;&nbsp;
+            <button onclick="location.href='#/purchaser/createPull'" type="button" id="back_order" class="btn btn-info">
+                补&nbsp;&nbsp;&nbsp;&nbsp;货
+            </button>&nbsp;&nbsp;
+            <button class="btn pull_2 repeal_order btn-warning" onclick="confirm('repeal_order')" style="display: none">
+                撤销
+            </button>
+        </div>
+        <div style="padding: 10px 2.5% 0;text-align: center;display: none" class="driver_login">
+            <div style="display: inline-block;margin-bottom: 10px;">
+                <label class="col-xs-3 control-label"> 扫码 </label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" id="barcode" name="barcode" placeholder="点击开始扫码">
+                </div>
+            </div>
+            <form>
+                <div style="display: inline-block;margin-bottom: 10px;">
+                    <label class="col-xs-3 control-label"> 工号 </label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" name="worknum" placeholder="请输入司机工号">
+                    </div>
+                </div>
+                <div style="display: inline-block;margin-bottom: 10px;">
+                    <label class="col-xs-3 control-label">密码</label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" name="password" placeholder="输入司机密码">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-info">确认</button>
+                </div>
+            </form>
+        </div>
+        <div class="finish" style="display: none;height: 90px;width: 90%;margin: -15px 5% 0;">
+            <table class="table table-striped">
                 <tr>
-                    <td>品类</td>
-                    <td>件数</td>
-                    <td>总计</td>
-                    <td>回收量</td>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
+                    </td>
                 </tr>
-                <tr style="text-align: center">
-                    <td><span style="padding: 6px 0;display: block;">报纸</span></td>
-                    <td><span style="padding: 6px 0;display: block;">5</span></td>
-                    <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
-                    <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                <tr>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
+                    </td>
                 </tr>
-                <tr style="text-align: center">
-                    <td><span style="padding: 6px 0;display: block;">报纸</span></td>
-                    <td><span style="padding: 6px 0;display: block;">5</span></td>
-                    <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
-                    <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                <tr>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <dd>单号：
+                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                        </dd>
+                        <dd style="float: left;">拉货件数：<span>5</span>件</dd>
+                        <dd style="float: right">07-11 12：31</dd>
+                        <br>
+                        <dd style="float: left">京NM8976</dd>
+                        <dd style="float: right">潘金龙</dd>
                     </td>
                 </tr>
             </table>
-            <div style="text-align: center;">
-                <button type="button" id="back_order" class="btn btn-info">补&nbsp;&nbsp;&nbsp;&nbsp;货</button>
-            </div>
         </div>
-        <div style="width: 95%;margin: 0 2.5%;display: none;">
-        <table class="table table-bordered">
-            <tr>
-                <td style="text-align: left">&nbsp;<strong>订单号</strong></td>
-                <td style="text-align: center"><strong>件数</strong></td>
-                <td style="text-align: center"><strong>时间</strong></td>
-                <td style="display: none"><strong>拉货人</strong></td>
-                <td style="display: none"><strong>验货人</strong></td>
-            </tr>
-            <tr style="text-align: center">
-                <td><a href="#/purchaser/pullDetail">201706061311</a></td>
-                <td>5</td>
-                <td>2017-06-06 13:11</td>
-                <td style="display: none">潘金龙</td>
-                <td style="display: none">潘金龙</td>
-            </tr>
-        </table>
-    </div>
-
-        <div style="padding: 10px 2.5% 0;text-align: center;position: relative;display: none" class="driver_login">
-        <div>
-            <label class="col-xs-3 control-label"> 扫码 </label>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" name="barcode" placeholder="点击开始扫码">
-            </div>
+        <div class="hangup" style="display: none;height: 90px;width: 90%;margin: -15px 5% 0;">
+            挂起显示
         </div>
-        <form>
-            <div>
-                <label class="col-xs-3 control-label"> 工号 </label>
-                <div class="col-xs-9">
-                    <input type="text" class="form-control" name="worknum" placeholder="请输入工号">
-                </div>
-            </div>
-            <div>
-                <label class="col-xs-3 control-label">密码</label>
-                <div class="col-xs-9">
-                    <input type="text" class="form-control" name="password" placeholder="输入密码">
-                </div>
-            </div>
-            <br>
-            <div>
-                <button type="button" class="btn btn-info">确认</button>
-            </div>
-        </form>
-
     </div>
-
-    <div class="panel-footer navbar-fixed-bottom mobile-width" style="background-color: #e8e8e8;padding-left:49px;">
-
-        <button class="btn pull_1 btn-success">申请</button>
+    <div class="panel-footer navbar-fixed-bottom mobile-width" style="background-color: #e8e8e8;text-align: center;">
+        <button class="btn pull_1 apply_order btn-success" onclick="confirm('apply_order')">申请</button>
         &nbsp;&nbsp;
-        <button class="btn pull_1 btn-danger">删除</button>
-        &nbsp;&nbsp;
-        <button class="btn pull_2 btn-info" style="display: none">补货</button>
-        <span class="pull_2" style="display: none">&nbsp;&nbsp;</span>
-        <button class="btn pull_2 btn-warning" style="display: none">撤销</button>
+        <button class="btn pull_1 delete_order btn-danger" onclick="confirm('delete_order')">删除</button>
     </div>
+    <!-- 操作提示框 -->
+    <div class="modal fade" id="myModal2">
+        <div class="modal-dialog" style="top:180px;">
+            <div class="modal-content">
+                <div style="text-align: center;font-size: 16px;font-weight: bold" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button id="goback" type="submit" class="btn btn-info">确定</button>
+                    <button id="cancel" type="submit" data-dismiss="modal" class="btn btn-info">取消</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
 </div>
 <script type="text/javascript" src="purchaser/recycle.html.js"></script>
 <script type="text/javascript">
+    function confirm(val) {
+        $("#myModal2").modal("show");
+        if (val == 'repeal_order') {
+            $(".modal-body").text("确定撤销当前订单？");
+            $("#goback").click(function () {
+                $("#myModal2").modal("hide");
+                $("div").remove('.modal-backdrop');
+//            window.location.href = '#/login';
+            });
+        }
+        if (val == 'apply_order') {
+            $(".modal-body").text("确定申请当前订单？");
+            $("#goback").click(function () {
+                $("#myModal2").modal("hide");
+                $("div").remove('.modal-backdrop');
+//            window.location.href = '#/login';
+            });
+        }
+        if (val == 'delete_order') {
+            $(".modal-body").text("确定删除当前订单？");
+            $("#goback").click(function () {
+                $("#myModal2").modal("hide");
+                $("div").remove('.modal-backdrop');
+//            window.location.href = '#/login';
+            });
+        }
+    }
 
     $("#pullType .btn").click(function () {
         if ($("#pullType .btn").hasClass('active')) {
             if ($(this).val() == 'pull_0') {
                 $(".pull_1").show();
+                $(".panel-footer").show();
+                $(".unfinish").show();
                 $(".pull_2").hide();
                 $(".driver_login").hide();
-                $(".table tr input").show();
-                $(".table tr").find('td:eq(3)').hide();
+                $(".finish").hide();
+                $(".hangup").hide();
+                $("#back_order").show();
+                $(".btn_group").show();
             }
             if ($(this).val() == 'pull_1') {
                 $(".pull_1").hide();
+                $(".panel-footer").hide();
+                $(".unfinish").show();
+                $(".finish").hide();
+                $(".hangup").hide();
                 $(".pull_2").show();
                 $(".driver_login").show();
-                $(".table tr input").show();
-                $(".table tr").find('td:eq(3)').hide();
+                $("#back_order").show();
+                $(".btn_group").show();
             }
             if ($(this).val() == 'pull_2') {
-                $(".pull_1").hide();
-                $(".pull_2").hide();
+                $(".btn_group").hide();
                 $(".driver_login").hide();
-                $(".table tr input").hide();
-                $(".table tr").find('td:eq(3)').show();
-                $(".table tr").find('td:eq(4)').hide();
+                $(".unfinish").hide();
+                $(".finish").show();
+                $(".hangup").hide();
+                $(".panel-footer").hide();
+                $("#back_order").hide();
             }
             if ($(this).val() == 'pull_3') {
-                $(".pull_1").hide();
-                $(".pull_2").hide();
+                $(".btn_group").hide();
                 $(".driver_login").hide();
-                $(".table tr input").hide();
-                $(".table tr").find('td:eq(3)').hide();
-                $(".table tr").find('td:eq(4)').show();
+                $(".unfinish").hide();
+                $(".hangup").hide();
+                $(".finish").show();
+                $(".panel-footer").hide();
+                $("#back_order").hide();
             }
             if ($(this).val() == 'pull_4') {
-                $(".pull_1").hide();
-                $(".pull_2").hide();
+                $(".btn_group").hide();
                 $(".driver_login").hide();
-                $(".table tr input").hide();
-                $(".table tr").find('td:eq(3)').hide();
-                $(".table tr").find('td:eq(4)').hide();
+                $(".unfinish").hide();
+                $(".finish").hide();
+                $(".hangup").show();
+                $(".panel-footer").hide();
+                $("#back_order").hide();
             }
         }
     });
