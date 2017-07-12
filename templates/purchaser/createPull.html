@@ -124,6 +124,7 @@
         $("#myModal").addClass("in");
         $(".modal-body").text("确定取消？");
         $("#goback").click(function () {
+            $("div").remove('.modal-backdrop');
             window.location.href = '#/purchaser/pullGoods';
         });
     });

@@ -35,7 +35,7 @@
                         <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;分&nbsp;</span>
                     </dt>
                     <dd style="text-align: right;float: right;position: relative">
-                        <button type="button" class="btn btn-default">回复</button>
+                        <button type="button" class="btn reply btn-default">回复</button>
                     </dt>
                 </td>
             </tr>
@@ -57,7 +57,7 @@
                         <span style="display: block;vertical-align: middle;height: 34px;line-height: 34px;float: left;">&nbsp;分&nbsp;</span>
                     </dt>
                     <dd style="text-align: right;float: right;position: relative">
-                        <button type="button" class="btn btn-default">回复</button>
+                        <button type="button" class="btn reply btn-default">回复</button>
                     </dt>
                 </td>
             </tr>
@@ -78,7 +78,7 @@
                             <span style="display:block">13901234567</span>
                         </dd>
                         <dd style="text-align: right;float: right;position: relative">
-                            <button type="button" class="btn btn-default">回复</button>
+                            <button type="button" class="btn reply btn-default">回复</button>
                         </dd>
                     </dl>
                 </td>
@@ -98,7 +98,7 @@
                             <span style="display:block">13901234567</span>
                         </dd>
                         <dd style="text-align: right;float: right;position: relative">
-                            <button type="button" class="btn btn-default">回复</button>
+                            <button type="button" class="btn reply btn-default">回复</button>
                         </dd>
                     </dl>
                 </td>
@@ -134,9 +134,29 @@
         </table>
     </div>
 </div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog" style="top:180px;">
+        <div class="modal-content">
+            <div style="text-align: center;font-size: 16px;font-weight: bold" class="modal-body"></div>
+            <div class="modal-footer">
+                <button id="goback" type="submit" class="btn btn-info">确定</button>
+                <button id="cancel" type="submit" data-dismiss="modal" class="btn btn-info">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
 <script type="text/javascript" src="purchaser/service_reminder.html.js"></script>
 
 <script type="text/javascript">
-
+    $(".reply").click(function () {
+        $("#myModal").modal("show");
+        $(".modal-body").text("确定回复当前时间？");
+        $("#goback").click(function () {
+            $("div").remove('.modal-backdrop');
+            $(".modal-body").text("回复成功！");
+            $("#myModal").modal("hide");
+        });
+    });
 </script>

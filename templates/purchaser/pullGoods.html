@@ -24,11 +24,11 @@
             <label style="float: left">创建时间：2017-07-11</label>
         </div>
         <!-- 未拉货详细显示框 -->
-        <div class="modal" id="myModal" style="top: 100px;display: none">
+        <div class="modal" id="myModal" style="padding-top: 100px;display: none">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <label style="font-size: 16px;margin: 10px 0 0 15px;display: block">回收订单明细</label>
-                    <table class="table table-bordered" style="text-align: center">
+                    <label style="font-size: 16px;margin: 10px;">回收订单明细</label>
+                    <table class="table table-striped" style="text-align: center;">
                         <tr>
                             <td>品类</td>
                             <td>件数</td>
@@ -48,36 +48,39 @@
                             <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
                             </td>
                         </tr>
-                        <tr style="text-align: center">
-                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
-                            <td><span style="padding: 6px 0;display: block;">5</span></td>
-                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
-                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
-                        </tr>
-                        <tr style="text-align: center">
-                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
-                            <td><span style="padding: 6px 0;display: block;">5</span></td>
-                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
-                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
-                            </td>
-                        </tr>
-                        <tr style="text-align: center">
-                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
-                            <td><span style="padding: 6px 0;display: block;">5</span></td>
-                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
-                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
-                        </tr>
                     </table>
                 </div>
             </div>
         </div>
         <!-- 已拉货详细显示框 -->
-        <div class="modal" id="myModal1" style="margin-top: 50px;">
+        <div class="modal" id="myModal1" style="padding-top: 50px;">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <label id="pickup" style="font-size: 16px;margin: 10px 0 0 15px;display: block">已拉货明细</label>
                     <label id="checkout" style="font-size: 16px;margin: 10px 0 0 15px;display: block">已验收明细</label>
-
+                    <ul>
+                        <li>单号：12345765432345</li>
+                        <li>拉货司机：潘金龙</li>
+                        <li>车牌号：京NM8976</li>
+                        <li>拉货件数：5件</li>
+                    </ul>
+                    <table class="table" style="text-align: center;">
+                        <tr>
+                            <td>品类</td>
+                            <td>件数</td>
+                            <td>总计</td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -177,10 +180,14 @@
                         <dd style="float: right">潘金龙</dd>
                     </td>
                 </tr>
+            </table>
+        </div>
+        <div class="hangup" style="display: none;height: 90px;width: 90%;margin: -15px 5% 0;">
+            <table class="table table-striped">
                 <tr>
                     <td>
                         <dd>单号：
-                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                            <a data-toggle="modal" data-target="#myModal3">123456987654123</a>
                         </dd>
                         <dd style="float: left;">拉货件数：<span>5</span>件</dd>
                         <dd style="float: right">07-11 12：31</dd>
@@ -192,7 +199,7 @@
                 <tr>
                     <td>
                         <dd>单号：
-                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                            <a data-toggle="modal" data-target="#myModal3">123456987654123</a>
                         </dd>
                         <dd style="float: left;">拉货件数：<span>5</span>件</dd>
                         <dd style="float: right">07-11 12：31</dd>
@@ -204,7 +211,7 @@
                 <tr>
                     <td>
                         <dd>单号：
-                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                            <a data-toggle="modal" data-target="#myModal3">123456987654123</a>
                         </dd>
                         <dd style="float: left;">拉货件数：<span>5</span>件</dd>
                         <dd style="float: right">07-11 12：31</dd>
@@ -216,7 +223,7 @@
                 <tr>
                     <td>
                         <dd>单号：
-                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                            <a data-toggle="modal" data-target="#myModal3">123456987654123</a>
                         </dd>
                         <dd style="float: left;">拉货件数：<span>5</span>件</dd>
                         <dd style="float: right">07-11 12：31</dd>
@@ -228,7 +235,7 @@
                 <tr>
                     <td>
                         <dd>单号：
-                            <a data-toggle="modal" data-target="#myModal1">123456987654123</a>
+                            <a data-toggle="modal" data-target="#myModal3">123456987654123</a>
                         </dd>
                         <dd style="float: left;">拉货件数：<span>5</span>件</dd>
                         <dd style="float: right">07-11 12：31</dd>
@@ -239,8 +246,61 @@
                 </tr>
             </table>
         </div>
-        <div class="hangup" style="display: none;height: 90px;width: 90%;margin: -15px 5% 0;">
-            挂起显示
+        <!-- 已挂起详细显示框 -->
+        <div class="modal" id="myModal3" style="padding-top: 50px;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <label style="font-size: 16px;margin: 10px 0 0 15px;display: block">已挂起明细</label>
+                    <ul>
+                        <li>单号：12345765432345</li>
+                        <li>拉货司机：潘金龙</li>
+                        <li>车牌号：京NM8976</li>
+                    </ul>
+                    <label style="margin-left: 15px;">应收</label>
+                    <label style="font-size: 16px;margin: 10px 0 0 15px;display: block">拉货件数：3件</label>
+                    <table class="table" style="text-align: center;margin-bottom: 0;">
+                        <tr>
+                            <td>品类</td>
+                            <td>件数</td>
+                            <td>总计</td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                    </table>
+                    <label style="margin-left: 15px;">实收</label>
+                    <label style="font-size: 16px;margin: 10px 0 0 15px;display: block">拉货件数：2件</label>
+                    <table class="table" style="text-align: center;margin-bottom: 0;">
+                        <tr>
+                            <td>品类</td>
+                            <td>件数</td>
+                            <td>总计</td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td><span style="padding: 6px 0;display: block;">报纸</span></td>
+                            <td><span style="padding: 6px 0;display: block;">5</span></td>
+                            <td><span style="padding: 6px 0;display: block;">11公斤</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <div class="panel-footer navbar-fixed-bottom mobile-width" style="background-color: #e8e8e8;text-align: center;">
@@ -259,6 +319,7 @@
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
+    </div>
 </div>
 <script type="text/javascript" src="purchaser/recycle.html.js"></script>
 <script type="text/javascript">
@@ -322,6 +383,8 @@
                 $(".hangup").hide();
                 $(".panel-footer").hide();
                 $("#back_order").hide();
+                $("#checkout").hide();
+                $("#pickup").show();
             }
             if ($(this).val() == 'pull_3') {
                 $(".btn_group").hide();
@@ -331,6 +394,8 @@
                 $(".finish").show();
                 $(".panel-footer").hide();
                 $("#back_order").hide();
+                $("#checkout").show();
+                $("#pickup").hide();
             }
             if ($(this).val() == 'pull_4') {
                 $(".btn_group").hide();
